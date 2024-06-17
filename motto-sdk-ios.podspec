@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'motto-sdk-ios'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of motto-sdk-ios.'
+  s.summary          = 'Motto SDK-iOS'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,19 +18,20 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Motto SDK - iOS
                        DESC
 
-  s.homepage         = 'https://github.com/daybreaker48/motto-sdk-ios'
+  s.homepage         = 'https://motto.kr/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'daybreaker48' => 'prof.dagian@gmail.com' }
-  s.source           = { :git => 'https://github.com/daybreaker48/motto-sdk-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/mjtlab/motto-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '15.0'
 
   s.source_files = 'motto-sdk-ios/Classes/**/*'
+  s.
   
   # s.resource_bundles = {
   #   'motto-sdk-ios' => ['motto-sdk-ios/Assets/*.png']
