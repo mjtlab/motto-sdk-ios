@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'motto-sdk-ios_Example' do
+  pod 'motto-sdk-ios', :path => '../'
+
+  target 'motto-sdk-ios_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
