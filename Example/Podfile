@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'mottosdkios_Example' do
+  pod 'mottosdkios', :path => '../'
+
+  target 'mottosdkios_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
