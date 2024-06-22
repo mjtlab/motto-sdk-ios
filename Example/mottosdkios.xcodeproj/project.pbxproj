@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3403F0A9BAA11A1EE0F6BE08 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3403F0A9BAA11A1EE0F6BE08 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3A6D774CF2B47D8B46502BD7 /* Pods-mottosdkios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mottosdkios_Example.release.xcconfig"; path = "Target Support Files/Pods-mottosdkios_Example/Pods-mottosdkios_Example.release.xcconfig"; sourceTree = "<group>"; };
 		43F38DCEE94DF22225B508C2 /* Pods-mottosdkios_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mottosdkios_Tests.release.xcconfig"; path = "Target Support Files/Pods-mottosdkios_Tests/Pods-mottosdkios_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* mottosdkios_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mottosdkios_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,9 +42,9 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		618AA730B08811FA71D1CFDD /* Pods_mottosdkios_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mottosdkios_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AF3D04404EB91E12F839140 /* mottosdkios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = mottosdkios.podspec; path = ../mottosdkios.podspec; sourceTree = "<group>"; };
+		6AF3D04404EB91E12F839140 /* mottosdkios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mottosdkios.podspec; path = ../mottosdkios.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		84C6E45921AA90D2B9784C3A /* Pods_mottosdkios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mottosdkios_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0138D085FBE5B9BB8DFC815 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D0138D085FBE5B9BB8DFC815 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ECFE9647926DAA6E34F681DF /* Pods-mottosdkios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mottosdkios_Example.debug.xcconfig"; path = "Target Support Files/Pods-mottosdkios_Example/Pods-mottosdkios_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F787D641126175A140D69CA6 /* Pods-mottosdkios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mottosdkios_Tests.debug.xcconfig"; path = "Target Support Files/Pods-mottosdkios_Tests/Pods-mottosdkios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,7 +147,6 @@
 				F787D641126175A140D69CA6 /* Pods-mottosdkios_Tests.debug.xcconfig */,
 				43F38DCEE94DF22225B508C2 /* Pods-mottosdkios_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -172,6 +171,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				4801E0B811992C6DE4A5DE0F /* [CP] Embed Pods Frameworks */,
+				994F53E8E1A7C75349E2A1EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,10 +213,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = JCN6A3584L;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = JCN6A3584L;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -269,11 +272,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mottosdkios_Example/Pods-mottosdkios_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/mottosdkios/mottosdkios.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mottosdkios.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -300,6 +307,370 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		994F53E8E1A7C75349E2A1EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mottosdkios_Example/Pods-mottosdkios_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAdsResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/VungleAds/VungleAds.bundle",
+				"${PODS_ROOT}/../../mottosdkios/Assets/bg_slot_machine.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/btn_mission_info.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/btn_motto_start.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/btn_motto_ticket.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_check_circle.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_close.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_home_title_dark2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_home_title_light2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_motto_draw.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_notice_dark.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_notice_light.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_retry.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/icon_ticket.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ic_arrow_left.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ic_clock.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ic_launcher_foreground.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/lens.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/like.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/main_mpago_ment.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/main_top_ment.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ment_save_nplace.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/motto_balloon_yellow.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/motto_slot_bg.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0000.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0001.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0003.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0005.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0006.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0007.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0009.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0010.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0012.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0013.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0015.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0016.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0018.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0019.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0021.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0023.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0024.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0026.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0027.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0029.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0030.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0032.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0033.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0036.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0037.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0039.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0043.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0045.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0046.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0049.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0050.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0053.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0055.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0057.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/move_0060.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/mpago_head1.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/mpago_head2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/mpago_head3.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_place_alarm_save_guide.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_place_bottom_bar_alarm.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_place_bottom_bar_save.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_alarm.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_blog.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_blog2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_heart2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_login.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_place1.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/naver_process_zzim.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/place_traffic_guide1.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/save.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/splash_img1.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/splash_img2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ticket1.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ticket2.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/ticket3.png",
+				"${PODS_ROOT}/../../mottosdkios/Assets/traffic.png",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Data/MissionData.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Data/Motto.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Data/Network/Model/DefaultResponseModel.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/Date+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/Notificatoin+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/NSObject+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/String+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/UIButton+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/UIColor+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/UIImageView+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/UIPickerView+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/UITextView+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions/UIView+.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/font/gmarketsansbold.ttf",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Literal/Const.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Literal/Images.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Utils/Utils.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Cells/TopTabBarCollectionViewCell.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/AccountViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/AdMissionViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/AdCpcViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/AdCpvViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/AdNetworkViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit/AdUnitAdmob.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit/AdUnitAdpopcorn.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit/AdUnitBase.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit/AdUnitPangle.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit/AdUnitUnity.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit/AdUnitVungle.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/BaseCampaignViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/BaseLibVC.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/BaseViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/DialogViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/FavorViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/GuideCommViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/GuideViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/HallOfFameViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/human/AutoKeywordViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/human/HumanNaverViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/human/SiteTrafficViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/inapp/SiteTrafficInappViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/IndexViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/MissionFailViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/MyMottoViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/NewHallOfFameViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/NewHomeViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/PrizeNumberViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/RewardFailViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/TestVC.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/TestViewController.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdBaseView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdCrawlingView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdHumanView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdNBlogView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdNFavorView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdNPlaceAlarmSaveView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdNPlaceView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdNPTrafficView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/AdNSTrafficView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/BaseView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/DialogView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/FavorView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/GuideCommView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/GuideNplaceHomeView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/GuideView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/inapp/AdInstagramView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/LoadingIndicator.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/MissionFailView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/RewardFailView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/TopTabBarView.swift",
+				"${PODS_ROOT}/../../mottosdkios/Classes/ReplaceMe.swift",
+				"${PODS_ROOT}/../../mottosdkios/temp.swift",
+				"${PODS_ROOT}/../../mottosdkios/Assets",
+				"${PODS_ROOT}/../../mottosdkios/Classes",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Data",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Data/Network",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Data/Network/Model",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Extensions",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/font",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Literal",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Global/Utils",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Cells",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/ads/adunit",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/human",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/VCs/inapp",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/ads",
+				"${PODS_ROOT}/../../mottosdkios/Classes/Presentation/Views/inapp",
+				"${PODS_CONFIGURATION_BUILD_DIR}/mottosdkios/mottosdk.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAdsResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VungleAds.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bg_slot_machine.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn_mission_info.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn_motto_start.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn_motto_ticket.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_check_circle.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_close.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_home_title_dark2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_home_title_light2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_motto_draw.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_notice_dark.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_notice_light.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_retry.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_ticket.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ic_arrow_left.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ic_clock.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ic_launcher_foreground.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lens.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/like.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/main_mpago_ment.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/main_top_ment.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ment_save_nplace.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/motto_balloon_yellow.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/motto_slot_bg.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0000.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0001.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0003.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0005.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0006.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0007.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0009.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0010.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0012.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0013.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0015.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0016.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0018.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0019.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0021.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0023.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0024.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0026.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0027.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0029.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0030.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0032.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0033.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0036.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0037.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0039.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0043.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0045.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0046.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0049.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0050.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0053.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0055.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0057.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0060.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mpago_head1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mpago_head2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mpago_head3.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_place_alarm_save_guide.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_place_bottom_bar_alarm.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_place_bottom_bar_save.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_alarm.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_blog.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_blog2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_heart2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_login.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_place1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_zzim.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/place_traffic_guide1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/save.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/splash_img1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/splash_img2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ticket1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ticket2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ticket3.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/traffic.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MissionData.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Motto.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DefaultResponseModel.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Date+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Notificatoin+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NSObject+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/String+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UIButton+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UIColor+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UIImageView+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UIPickerView+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UITextView+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UIView+.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gmarketsansbold.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Const.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Images.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Utils.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TopTabBarCollectionViewCell.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccountViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdMissionViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdCpcViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdCpvViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNetworkViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdUnitAdmob.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdUnitAdpopcorn.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdUnitBase.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdUnitPangle.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdUnitUnity.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdUnitVungle.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BaseCampaignViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BaseLibVC.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BaseViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DialogViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FavorViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GuideCommViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GuideViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HallOfFameViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AutoKeywordViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HumanNaverViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SiteTrafficViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SiteTrafficInappViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IndexViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MissionFailViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MyMottoViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NewHallOfFameViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NewHomeViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PrizeNumberViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RewardFailViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TestVC.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TestViewController.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdBaseView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdCrawlingView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdHumanView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNBlogView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNFavorView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNPlaceAlarmSaveView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNPlaceView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNPTrafficView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdNSTrafficView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BaseView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DialogView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FavorView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GuideCommView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GuideNplaceHomeView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GuideView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdInstagramView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LoadingIndicator.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MissionFailView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RewardFailView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TopTabBarView.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ReplaceMe.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/temp.swift",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Classes",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Data",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Network",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Model",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Global",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Extensions",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/font",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Literal",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Utils",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Presentation",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Cells",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VCs",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ads",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/adunit",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/human",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/inapp",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Views",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mottosdk.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mottosdkios_Example/Pods-mottosdkios_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1E227D0CD2CB6DCB11329BD /* [CP] Check Pods Manifest.lock */ = {
@@ -404,6 +775,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -419,7 +791,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -457,6 +829,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -465,7 +838,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -478,8 +851,25 @@
 			baseConfigurationReference = ECFE9647926DAA6E34F681DF /* Pods-mottosdkios_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JCN6A3584L;
+				EXCLUDED_ARCHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/Google_Mobile_Ads_SDK.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Then/Then.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/mottosdkios/mottosdkios.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/GoogleUserMessagingPlatform.framework/Headers\"",
+				);
 				INFOPLIST_FILE = mottosdkios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,8 +883,25 @@
 			baseConfigurationReference = 3A6D774CF2B47D8B46502BD7 /* Pods-mottosdkios_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JCN6A3584L;
+				EXCLUDED_ARCHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Google-Mobile-Ads-SDK/Google_Mobile_Ads_SDK.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Then/Then.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/mottosdkios/mottosdkios.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUserMessagingPlatform/GoogleUserMessagingPlatform.framework/Headers\"",
+				);
 				INFOPLIST_FILE = mottosdkios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +914,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F787D641126175A140D69CA6 /* Pods-mottosdkios_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = JCN6A3584L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +937,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43F38DCEE94DF22225B508C2 /* Pods-mottosdkios_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = JCN6A3584L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

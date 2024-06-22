@@ -1,0 +1,6 @@
+framework module mottosdkios {
+  umbrella header "mottosdkios-umbrella.h"
+
+  export *
+  module * { export * }
+}

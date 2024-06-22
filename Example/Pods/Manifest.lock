@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (5.9.1)
+  - mottosdkios (0.0.1):
+    - Alamofire
+    - SnapKit (~> 5.6.0)
+    - Then
+    - UnityAds
+    - VungleAds
+  - SnapKit (5.6.0)
+  - Then (3.0.0)
+  - UnityAds (4.12.0)
+  - VungleAds (7.3.2)
+
+DEPENDENCIES:
+  - mottosdkios (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SnapKit
+    - Then
+    - UnityAds
+    - VungleAds
+
+EXTERNAL SOURCES:
+  mottosdkios:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  mottosdkios: 6656298702dc1d63842380e435284b773b358907
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  UnityAds: 1e669f1d49924fbdbd54544afa9294b567354509
+  VungleAds: 0d696ed96dd7d715a9432997356d59b2e3b58882
+
+PODFILE CHECKSUM: bcdef895940dada2e7b9c48f8aff6a38a02d0626
+
+COCOAPODS: 1.15.0
