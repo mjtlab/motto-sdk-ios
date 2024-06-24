@@ -1,0 +1,6 @@
+framework module mottolib {
+  umbrella header "mottolib-umbrella.h"
+
+  export *
+  module * { export * }
+}
