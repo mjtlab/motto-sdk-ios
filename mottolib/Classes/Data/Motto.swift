@@ -84,7 +84,7 @@ public class Motto {
         return viewController
     }
     
-    public static func create(_ route: String) -> UIViewController {
+    public static func create(_ route: String = "RELEASE") -> UIViewController {
         routeString = route
         
         if routeString.contains("DEBUG") {
@@ -120,19 +120,19 @@ public class Motto {
     static func IsDarkMode() -> Bool {
         return isDarkMode
     }
-    static func setIsDarkMode(isdarkmode: Bool) {
+    public static func setIsDarkMode(_ isdarkmode: Bool) {
         isDarkMode = isdarkmode
     }
     static func getBackgroundColor() -> UIColor {
         return backgroundColor
     }
-    static func setBackgroundColor(backgroundcolor: UIColor) {
+    public static func setBackgroundColor(_ backgroundcolor: UIColor) {
         backgroundColor = backgroundcolor
     }
     static func getMainColor() -> UIColor {
         return mainColor
     }
-    static func setMainColor(maincolor: UIColor) {
+    public static func setMainColor(_ maincolor: UIColor) {
         mainColor = maincolor
     }
 }

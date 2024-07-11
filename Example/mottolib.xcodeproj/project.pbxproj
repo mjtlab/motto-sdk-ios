@@ -213,10 +213,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = RZ6WGLZJG9;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = RZ6WGLZJG9;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -314,12 +316,174 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mottolib_Example/Pods-mottolib_Example-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAds.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAdsResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/VungleAds/VungleAds.bundle",
+				"${PODS_ROOT}/../../mottolib/Assets/bg_slot_machine.png",
+				"${PODS_ROOT}/../../mottolib/Assets/btn_mission_info.png",
+				"${PODS_ROOT}/../../mottolib/Assets/btn_motto_start.png",
+				"${PODS_ROOT}/../../mottolib/Assets/btn_motto_ticket.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_check_circle.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_close.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_home_title_dark2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_home_title_light2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_motto_draw.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_notice_dark.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_notice_light.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_retry.png",
+				"${PODS_ROOT}/../../mottolib/Assets/icon_ticket.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ic_arrow_left.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ic_clock.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ic_launcher_foreground.png",
+				"${PODS_ROOT}/../../mottolib/Assets/lens.png",
+				"${PODS_ROOT}/../../mottolib/Assets/like.png",
+				"${PODS_ROOT}/../../mottolib/Assets/main_mpago_ment.png",
+				"${PODS_ROOT}/../../mottolib/Assets/main_top_ment.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ment_save_nplace.png",
+				"${PODS_ROOT}/../../mottolib/Assets/motto_balloon_yellow.png",
+				"${PODS_ROOT}/../../mottolib/Assets/motto_slot_bg.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0000.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0001.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0003.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0005.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0006.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0007.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0009.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0010.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0012.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0013.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0015.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0016.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0018.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0019.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0021.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0023.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0024.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0026.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0027.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0029.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0030.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0032.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0033.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0036.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0037.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0039.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0043.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0045.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0046.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0049.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0050.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0053.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0055.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0057.png",
+				"${PODS_ROOT}/../../mottolib/Assets/move_0060.png",
+				"${PODS_ROOT}/../../mottolib/Assets/mpago_head1.png",
+				"${PODS_ROOT}/../../mottolib/Assets/mpago_head2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/mpago_head3.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_place_alarm_save_guide.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_place_bottom_bar_alarm.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_place_bottom_bar_save.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_alarm.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_blog.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_blog2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_heart2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_login.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_place1.png",
+				"${PODS_ROOT}/../../mottolib/Assets/naver_process_zzim.png",
+				"${PODS_ROOT}/../../mottolib/Assets/place_traffic_guide1.png",
+				"${PODS_ROOT}/../../mottolib/Assets/save.png",
+				"${PODS_ROOT}/../../mottolib/Assets/splash_img1.png",
+				"${PODS_ROOT}/../../mottolib/Assets/splash_img2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ticket1.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ticket2.png",
+				"${PODS_ROOT}/../../mottolib/Assets/ticket3.png",
+				"${PODS_ROOT}/../../mottolib/Assets/traffic.png",
 				"${PODS_CONFIGURATION_BUILD_DIR}/mottolib/mottolib.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAds.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAdsResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VungleAds.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bg_slot_machine.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn_mission_info.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn_motto_start.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/btn_motto_ticket.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_check_circle.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_close.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_home_title_dark2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_home_title_light2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_motto_draw.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_notice_dark.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_notice_light.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_retry.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icon_ticket.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ic_arrow_left.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ic_clock.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ic_launcher_foreground.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lens.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/like.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/main_mpago_ment.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/main_top_ment.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ment_save_nplace.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/motto_balloon_yellow.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/motto_slot_bg.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0000.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0001.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0003.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0005.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0006.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0007.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0009.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0010.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0012.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0013.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0015.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0016.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0018.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0019.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0021.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0023.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0024.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0026.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0027.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0029.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0030.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0032.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0033.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0036.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0037.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0039.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0043.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0045.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0046.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0049.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0050.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0053.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0055.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0057.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/move_0060.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mpago_head1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mpago_head2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mpago_head3.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_place_alarm_save_guide.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_place_bottom_bar_alarm.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_place_bottom_bar_save.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_alarm.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_blog.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_blog2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_heart2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_login.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_place1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/naver_process_zzim.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/place_traffic_guide1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/save.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/splash_img1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/splash_img2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ticket1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ticket2.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ticket3.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/traffic.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mottolib.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +667,7 @@
 			baseConfigurationReference = 08672CE02BF4ED09DC35AFE5 /* Pods-mottolib_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RZ6WGLZJG9;
 				INFOPLIST_FILE = mottolib/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -519,6 +684,7 @@
 			baseConfigurationReference = 1F10AC755C2E849CF702213C /* Pods-mottolib_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RZ6WGLZJG9;
 				INFOPLIST_FILE = mottolib/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -534,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F9EB1CCCEEEA09DB93862B74 /* Pods-mottolib_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = RZ6WGLZJG9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -543,6 +710,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,11 +724,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9E98E2A18FC5B5268044EB0 /* Pods-mottolib_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = RZ6WGLZJG9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mottolib'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'Motto SDK-iOS'
   s.swift_version    = '5.0'
 
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
      'mottolib' => ['mottolib/Assets/*.png']
    }
 
-#   s.resources = 'mottosdkios/Assets/**/*'
+   s.resources = 'mottolib/Assets/*.png'
  #
  #   s.pod_target_xcconfig = {
  #       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'

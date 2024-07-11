@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
-  - mottolib (0.0.3):
+  - mottolib (0.0.5):
     - Alamofire
     - SnapKit (~> 5.6.0)
     - Then
@@ -8,8 +8,8 @@ PODS:
     - VungleAds
   - SnapKit (5.6.0)
   - Then (3.0.0)
-  - UnityAds (4.10.0)
-  - VungleAds (7.0.1)
+  - UnityAds (4.12.1)
+  - VungleAds (7.4.0)
 
 DEPENDENCIES:
   - mottolib (from `../`)
@@ -28,12 +28,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  mottolib: bc6c632e54df36fbf3922648a30b6a7dcd3e6b80
+  mottolib: 69010d15f22555b81a37a9d08c69d5c8ac52a2b9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  UnityAds: 5601f6397b0e02ed3ed6ee92827f5177a523aab6
-  VungleAds: 49e2cbb981c1efa0086029d2dcec8a7322105809
+  UnityAds: f89ac1e717f5d566a58479a5b7cb9ed3a744cae3
+  VungleAds: 4823f53e691ba140ff21e3a3a6897af789832a36
 
-PODFILE CHECKSUM: 45e49117baec893f863dda4fb5763ef6131eb0f7
+PODFILE CHECKSUM: c8be070c6aecaa5576758844083013eeae35aed0
 
 COCOAPODS: 1.15.0

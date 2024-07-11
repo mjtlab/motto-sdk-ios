@@ -67,7 +67,7 @@ class Utils {
     
     public static func podImage(context: AnyClass, img: String) -> UIImage? {
         let frameworkBundle = Bundle(for: context)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("mottosdkios")
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("mottolib")
         let resourceBundle = Bundle(url: bundleURL!)
 
         return UIImage(named: img, in: resourceBundle, compatibleWith: nil)
