@@ -285,8 +285,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         topNoticeTableView.dataSource = self
         
         setDelegate()
-        Utils.consoleLog("Motto.uid", Motto.uid, true)
-        Utils.consoleLog("Motto.pubkey", Motto.pubkey, true)
+
         if Motto.pubkey == "motto" {
             checkAttend()
         } else {
