@@ -308,7 +308,7 @@ class AdNPTrafficView: AdCrawlingView {
             pageType == MissionPageTypes.DBUrl3 {
             parentVC?.visibleTitleBar(visible: true)
             
-            var delay = 1500
+            var delay = 700
             var scriptNumber = 0
             
             switch pageType {
@@ -343,7 +343,7 @@ class AdNPTrafficView: AdCrawlingView {
                     }
                     isStopCountdown = false
                 } else if joinMethod == 2 {
-                    delay = 3000
+                    delay = 1700
                     guideType = NPTrafficGuides.Stores
                     switchTopButtonView(isvisible: true)
                     scriptNumber = 4

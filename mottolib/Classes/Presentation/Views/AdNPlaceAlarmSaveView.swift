@@ -277,12 +277,12 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
             
             parentVC?.visibleTitleBar(visible: true)
             switchTopButtonView(isvisible: false)
-            var delay = 700
+            var delay = 500
             var scriptNumber = 0
             
             switch pageType {
             case .DBUrl1:
-                delay = 1500
+                delay = 700
                 guideType = NPlaceGuides.Stores
                 switch joinMethod {
                 case 1:
@@ -307,10 +307,10 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
                         guideType = NPlaceGuides.Alarm
                         isShowLastGuide = true
                     }
-                    delay = 1400
+                    delay = 700
                     scriptNumber = 5
                 } else if joinMethod == 2 {
-                    delay = 3000
+                    delay = 1700
                     guideType = NPlaceGuides.Stores
                     switchTopButtonView(isvisible: true)
                     scriptNumber = 4
@@ -322,7 +322,7 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
                         guideType = NPlaceGuides.Alarm
                         isShowLastGuide = true
                     }
-                    delay = 1400
+                    delay = 700
                     scriptNumber = 5
                 }
             

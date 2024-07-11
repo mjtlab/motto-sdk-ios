@@ -267,7 +267,7 @@ class AdNSTrafficView: AdCrawlingView {
             
             parentVC?.visibleTitleBar(visible: true)
             
-            var delay = 1500
+            var delay = 700
             var scriptNumber = 0
             var lastPage: Bool = false
             
@@ -278,7 +278,7 @@ class AdNSTrafficView: AdCrawlingView {
                     case 1:
                         guideType = NSTrafficGuides.More
                         scriptNumber = 2
-                        delay = 1000
+                        delay = 500
                     default:
                         guideType = NSTrafficGuides.Stores
                         scriptNumber = 3
@@ -303,7 +303,7 @@ class AdNSTrafficView: AdCrawlingView {
                     if joinMethod == 1 {
                         guideType = NSTrafficGuides.More
                         scriptNumber = 2
-                        delay = 1000
+                        delay = 500
                     } else {
                         guideType = NSTrafficGuides.Stores
                         scriptNumber = 3

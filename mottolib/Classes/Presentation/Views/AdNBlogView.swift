@@ -52,7 +52,7 @@ class AdNBlogView: AdNPlaceView {
             parentVC?.visibleTitleBar(visible: true)
             topButtonView.isHidden = true
             
-            var delay = 700
+            var delay = 500
             var scriptNumber = 0
             
             switch pageType {
@@ -80,7 +80,7 @@ class AdNBlogView: AdNPlaceView {
                     entryLastPage = true
                     guideType = NPlaceGuides.PlaceShare
                 } else if joinMethod == 2 {
-                    delay = 3000
+                    delay = 1700
                     guideType = NPlaceGuides.Stores
                     switchTopButtonView(isvisible: true)
                     scriptNumber = 4
@@ -97,7 +97,7 @@ class AdNBlogView: AdNPlaceView {
                 } else {
                     bottomView.isHidden = false
                     guideType = NPlaceGuides.BlogMain
-                    delay = 1400
+                    delay = 700
                     scriptNumber = 5
                 }
             default:
