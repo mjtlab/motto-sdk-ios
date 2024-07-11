@@ -17,14 +17,15 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = .white
         let viewcontroller = Motto.create()
+        Motto.uid = "mottosdkios"
+        Motto.pubkey = "668dea5ee39c8"
+        
         self.view.addSubview(viewcontroller.view)
                 
         viewcontroller.view.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
 
-        Motto.uid = "user ID"
-        Motto.pubkey = "company key"
         Motto.setBackgroundColor(.white)
         Motto.setIsDarkMode(false)
     }

@@ -285,7 +285,13 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         topNoticeTableView.dataSource = self
         
         setDelegate()
-        checkAttend()
+        Utils.consoleLog("Motto.uid", Motto.uid, true)
+        Utils.consoleLog("Motto.pubkey", Motto.pubkey, true)
+        if Motto.pubkey == "motto" {
+            checkAttend()
+        } else {
+            addUser()
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(mainRefresh), name: .refresh, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(goMission), name: .gomission, object: nil)
@@ -299,9 +305,6 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             "head.appendChild(meta);"
         let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         config.userContentController.addUserScript(script)
-        
-        
-        
         let contentController = WKUserContentController()
         
         contentController.add(self, name: "CampaignInterfaceIos")
@@ -318,8 +321,6 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         infoWebView.allowsBackForwardNavigationGestures = true
         infoWebView.uiDelegate = self
         infoWebView.navigationDelegate = self
-        
-        
         
         self.view.addSubview(scrollView)
         
@@ -950,8 +951,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {     
             if datas.count == 3 {
-                let alert = UIAlertController(title: "", message: "[이용권 \(datas[0])장]", preferredStyle: .alert)
-//                let alert = UIAlertController(title: "", message: "[이용권 \(datas[0])장]\n\(datas[1])\(datas[2]) 적립", preferredStyle: .alert)
+//                let alert = UIAlertController(title: "", message: "[이용권 \(datas[0])장]", preferredStyle: .alert)
+                let alert = UIAlertController(title: "", message: "[이용권 \(datas[0])장]\n\(datas[1])\(datas[2]) 적립", preferredStyle: .alert)
                 let yes = UIAlertAction(title: "확인", style: .default) {_ in
                     self.dismiss(animated: false)
                 }
@@ -992,10 +993,10 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                 guard let afModel = response.value else { return }
                 switch response.result {
                 case .success(let value):
-                    Utils.consoleLog("Network Response SUCCESS(my_ticket_v2.php)", value)
+                    Utils.consoleLog("Network Response SUCCESS(my_ticket_v2.php)", value, true)
                     
                     if afModel.result == -1 {
-                        Utils.consoleLog("Network Response data FAIL(my_ticket_v2.php)")
+                        Utils.consoleLog("Network Response data FAIL(my_ticket_v2.php)", "fail", true)
                     } else {
                         guard let responseData = afModel.data else { return }
                         var responseDataInt = Int(responseData) ?? 0
@@ -1009,12 +1010,45 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                         }
                     }
                 case .failure(let error):
-                    Utils.consoleLog("Network Response FAIL(my_ticket_v2.php)", error)
+                    Utils.consoleLog("Network Response FAIL(my_ticket_v2.php)", error, true)
                 }
             }
             
             midBalloonView.isHidden = false
             midBalloonLabel.isHidden = false
+        }
+    }
+    func addUser() {
+        Utils.consoleLog("pubkey", Motto.pubkey, true)
+        Utils.consoleLog("uid", Motto.uid, true)
+                         
+        if Motto.uid != "" && Motto.pubkey != "" {
+            let parameters: Parameters = ["what": "join", "pk": Motto.pubkey, "uid": Motto.uid]
+            AF.request(
+                Motto.currentDomain + Domains.mainPath + "joinus.php",
+                method: .post,
+                parameters: parameters)
+            .validate(statusCode: 200..<500)
+            .responseDecodable(of: DefaultResponseModel.self) { response in
+                guard let afModel = response.value else { return }
+                switch response.result {
+                case .success(let value):
+                    Utils.consoleLog("Network Response SUCCESS(joinus.php)", value, true)
+                    
+                    if afModel.result == -1 {
+                        Utils.consoleLog("Network Response data FAIL(joinus.php)", "", true)
+                    } else {
+                        guard let responseData = afModel.data else { return }
+                        if responseData != "0" {
+                            self.loadMyTicket(isStartRoulette: true)
+                        } else {
+                            self.checkAttend()
+                        }
+                    }
+                case .failure(let error):
+                    Utils.consoleLog("Network Response FAIL(attends.php)", error, true)
+                }
+            }
         }
     }
     func checkAttend() {
@@ -1029,10 +1063,10 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                 guard let afModel = response.value else { return }
                 switch response.result {
                 case .success(let value):
-                    Utils.consoleLog("Network Response SUCCESS(attends.php)", value)
+                    Utils.consoleLog("Network Response SUCCESS(attends.php)", value, true)
                     
                     if afModel.result == -1 {
-                        Utils.consoleLog("Network Response data FAIL(attends.php)")
+                        Utils.consoleLog("Network Response data FAIL(attends.php)", "", true)
                     } else {
                         guard let responseData = afModel.data else { return }
                         if responseData != "0" {
@@ -1047,7 +1081,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                         self.loadMyTicket(isStartRoulette: true)
                     }
                 case .failure(let error):
-                    Utils.consoleLog("Network Response FAIL(attends.php)", error)
+                    Utils.consoleLog("Network Response FAIL(attends.php)", error, true)
                 }
             }
         }

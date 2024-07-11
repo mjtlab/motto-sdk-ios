@@ -35,7 +35,7 @@ final class IndexViewController: UIViewController {
         view.backgroundColor = .baseWhite
         
         
-        Motto.uid = UserDefaults.standard.string(forKey: "uid") ?? ""
+//        Motto.uid = UserDefaults.standard.string(forKey: "uid") ?? ""
         Motto.adid = UserDefaults.standard.string(forKey: "adid") ?? ""
 //        Motto.pubkey = (Config.pubkey == MLDefine.pub_key) ? MLDefine.pub_key : Config.pubkey
         Motto.isLaunched = true
