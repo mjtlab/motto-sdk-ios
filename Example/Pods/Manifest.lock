@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
-  - mottolib (0.0.5):
+  - mottolib (0.0.6):
     - Alamofire
     - SnapKit (~> 5.6.0)
     - Then
@@ -28,7 +28,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  mottolib: 69010d15f22555b81a37a9d08c69d5c8ac52a2b9
+  mottolib: fc1b0cf34bd36285c31d4ead399bef7e445168f7
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   UnityAds: f89ac1e717f5d566a58479a5b7cb9ed3a744cae3

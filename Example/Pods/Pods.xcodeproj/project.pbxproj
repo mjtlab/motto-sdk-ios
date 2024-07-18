@@ -17,7 +17,6 @@
 				0E7D7D03BA02DBF044128B59A73E9D86 /* PBXTargetDependency */,
 			);
 			name = VungleAds;
-			productName = VungleAds;
 		};
 		93D529076BA2F81743BF6033A35532F2 /* UnityAds */ = {
 			isa = PBXAggregateTarget;
@@ -29,7 +28,6 @@
 				1A9ED3ACEEA425C4196BE2A699002B68 /* PBXTargetDependency */,
 			);
 			name = UnityAds;
-			productName = UnityAds;
 		};
 /* End PBXAggregateTarget section */
 
@@ -410,12 +408,12 @@
 /* Begin PBXFileReference section */
 		0042545DF3811B09387CB23AA47BDA44 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		00F9A5DC4E3C48E106BAC552FD807DE8 /* naver_process_blog.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = naver_process_blog.png; path = mottolib/Assets/naver_process_blog.png; sourceTree = "<group>"; };
-		01D8395C8318D3B4E6326E60F8676513 /* omsdk-v1.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = "omsdk-v1.js"; path = "UnityAds.xcframework/ios-arm64/UnityAds.framework/omsdk-v1.js"; sourceTree = "<group>"; };
+		01D8395C8318D3B4E6326E60F8676513 /* omsdk-v1.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "omsdk-v1.js"; path = "UnityAds.xcframework/ios-arm64/UnityAds.framework/omsdk-v1.js"; sourceTree = "<group>"; };
 		033CC495CC3375A915DCC7AEA851BDF8 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Features/Combine.swift; sourceTree = "<group>"; };
 		03B0E4CB7DE7FFC861CDCA0BFBDCBA96 /* UnityAds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UnityAds.release.xcconfig; sourceTree = "<group>"; };
 		03FCB3ED1F0549E1EA8544CE60FAF16B /* AdUnitAdmob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdUnitAdmob.swift; sourceTree = "<group>"; };
 		06152712861FA5CC568F4FE43E43EC3E /* move_0003.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0003.png; path = mottolib/Assets/move_0003.png; sourceTree = "<group>"; };
-		084FCC0053A8073A2668437965E17497 /* VungleAdsSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = VungleAdsSDK.xcframework; path = static/VungleAdsSDK.xcframework; sourceTree = "<group>"; };
+		084FCC0053A8073A2668437965E17497 /* VungleAdsSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = VungleAdsSDK.xcframework; path = static/VungleAdsSDK.xcframework; sourceTree = "<group>"; };
 		085DBCE7DD98588B2ED103B1C1F36026 /* Alamofire-Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Alamofire-Alamofire"; path = Alamofire.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A858FD1197CF3060721D36561B7F78 /* VungleAds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VungleAds.debug.xcconfig; sourceTree = "<group>"; };
 		09F17E1372FB9A30A8F77E1DE54C1585 /* naver_process_zzim.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = naver_process_zzim.png; path = mottolib/Assets/naver_process_zzim.png; sourceTree = "<group>"; };
@@ -465,11 +463,11 @@
 		28AD788E6E9900D2A97DE71088115F0E /* RewardFailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RewardFailView.swift; sourceTree = "<group>"; };
 		2BA6A3FFB6C1DB1FCD8FDC752A852978 /* motto_slot_bg.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = motto_slot_bg.png; path = mottolib/Assets/motto_slot_bg.png; sourceTree = "<group>"; };
 		2C6BC88785311483DED54C5160034015 /* ic_arrow_left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ic_arrow_left.png; path = mottolib/Assets/ic_arrow_left.png; sourceTree = "<group>"; };
-		2E8284C3EB7CEB2D84C93E7C82ABFE82 /* omid-session-client-v1.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = "omid-session-client-v1.js"; path = "UnityAds.xcframework/ios-arm64/UnityAds.framework/omid-session-client-v1.js"; sourceTree = "<group>"; };
+		2E8284C3EB7CEB2D84C93E7C82ABFE82 /* omid-session-client-v1.js */ = {isa = PBXFileReference; includeInIndex = 1; name = "omid-session-client-v1.js"; path = "UnityAds.xcframework/ios-arm64/UnityAds.framework/omid-session-client-v1.js"; sourceTree = "<group>"; };
 		300AC8E7F7C989AB11CB1BBE07D2194F /* splash_img1.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = splash_img1.png; path = mottolib/Assets/splash_img1.png; sourceTree = "<group>"; };
 		312BF23D5F34B5C5585CA51F126F7963 /* splash_img2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = splash_img2.png; path = mottolib/Assets/splash_img2.png; sourceTree = "<group>"; };
 		342205081D2A3C365D945D49656D5781 /* Pods-mottolib_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mottolib_Example-frameworks.sh"; sourceTree = "<group>"; };
-		3559D348622E5566AAB905D19E79DA98 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3559D348622E5566AAB905D19E79DA98 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		36A4C0E5DC04EA00ADE6E950268B7DC6 /* naver_place_bottom_bar_alarm.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = naver_place_bottom_bar_alarm.png; path = mottolib/Assets/naver_place_bottom_bar_alarm.png; sourceTree = "<group>"; };
 		3AC4653E6866CC1C7EA3B2FA9847351E /* TopTabBarCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TopTabBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		3B7502B3D9CB5C08931600CE0BE25B42 /* DataRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataRequest.swift; path = Source/Core/DataRequest.swift; sourceTree = "<group>"; };
@@ -484,7 +482,7 @@
 		3F6C35666488E1F125757AED3E8A5A7E /* mottolib.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = mottolib.modulemap; sourceTree = "<group>"; };
 		414B51A185069FEF6F29BC5A67A362A8 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/Core/ParameterEncoding.swift; sourceTree = "<group>"; };
 		420B2DDA550E60A3F5BA64389D755D2C /* VungleAds-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "VungleAds-xcframeworks.sh"; sourceTree = "<group>"; };
-		4241255FA8136A4651B18BE1578F719D /* gmarketsansbold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = gmarketsansbold.ttf; sourceTree = "<group>"; };
+		4241255FA8136A4651B18BE1578F719D /* gmarketsansbold.ttf */ = {isa = PBXFileReference; includeInIndex = 1; path = gmarketsansbold.ttf; sourceTree = "<group>"; };
 		424F2EAA686AC93C6255656F46EDEAE8 /* naver_process_place1.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = naver_process_place1.png; path = mottolib/Assets/naver_process_place1.png; sourceTree = "<group>"; };
 		43B970E136CC011A841667A38086D385 /* Then.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Then.debug.xcconfig; sourceTree = "<group>"; };
 		43D20CFECA5BFE6FC0E666AF6C7DF3D0 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/Core/ParameterEncoder.swift; sourceTree = "<group>"; };
@@ -516,19 +514,19 @@
 		532F7D41675768C5D3456EA6EB81F5F2 /* UnityAds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UnityAds.debug.xcconfig; sourceTree = "<group>"; };
 		53F4B532486F2E28673192FEACB42287 /* WebSocketRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebSocketRequest.swift; path = Source/Core/WebSocketRequest.swift; sourceTree = "<group>"; };
 		54D2A97B561F17A29DD8A042B3DA16C8 /* Pods-mottolib_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mottolib_Example-dummy.m"; sourceTree = "<group>"; };
-		57D94E756DCD6E1FBD505703B9568D2D /* UnityAds.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = UnityAds.xcframework; sourceTree = "<group>"; };
+		57D94E756DCD6E1FBD505703B9568D2D /* UnityAds.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = UnityAds.xcframework; sourceTree = "<group>"; };
 		58FEAA35C2213564EBA4D2D9F3CCEAA0 /* btn_motto_ticket.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = btn_motto_ticket.png; path = mottolib/Assets/btn_motto_ticket.png; sourceTree = "<group>"; };
 		59E3F2B476C6C1217CD93BEA0B620B81 /* BaseCampaignViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseCampaignViewController.swift; sourceTree = "<group>"; };
 		5AECE81C10410DD5038E99EF984611EA /* ticket3.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ticket3.png; path = mottolib/Assets/ticket3.png; sourceTree = "<group>"; };
 		5AF1952A593D9FA18A9CC63234F5880A /* move_0019.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0019.png; path = mottolib/Assets/move_0019.png; sourceTree = "<group>"; };
-		5B07ED66CF562C6888C54089441A0809 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Source/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		5B07ED66CF562C6888C54089441A0809 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Source/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5B90F86B4063FAD03C299839DACC9EEA /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
 		5BC51ED04AFCCE640E61DE226CF5B4F5 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Sources/ConstraintDSL.swift; sourceTree = "<group>"; };
 		5C4C94CDAF09A36FDEA160C4F6D46733 /* ment_save_nplace.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = ment_save_nplace.png; path = mottolib/Assets/ment_save_nplace.png; sourceTree = "<group>"; };
 		5CD1D93C60AA056C571B9D8DB1F6BB62 /* AdNBlogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdNBlogView.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E08309969066CDF71459464EF36EBB0 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/Core/SessionDelegate.swift; sourceTree = "<group>"; };
-		602AFC912783BC0AED65FB716DCA87E0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = "UnityAds.xcframework/ios-arm64/UnityAds.framework/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		602AFC912783BC0AED65FB716DCA87E0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "UnityAds.xcframework/ios-arm64/UnityAds.framework/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		6262267C3980015809F2D2C7215F784D /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Core/Protected.swift; sourceTree = "<group>"; };
 		632D89808D4E8A3F9BD9E0EDA52BB2BE /* AdHumanView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdHumanView.swift; sourceTree = "<group>"; };
 		63827014E9A34C61F1DB0B6812528224 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
@@ -565,7 +563,7 @@
 		8706E639DD7B726D6C933E0D11E40DD1 /* move_0016.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0016.png; path = mottolib/Assets/move_0016.png; sourceTree = "<group>"; };
 		87E1DBE644C69056DEE1816D3297DFBB /* UIColor+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		88A2B85FA4BEDE51653C7189B92111E6 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/Core/HTTPHeaders.swift; sourceTree = "<group>"; };
-		88E32F0F946CE6533A3AE1FAAD74E1D1 /* mottolib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = mottolib.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		88E32F0F946CE6533A3AE1FAAD74E1D1 /* mottolib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = mottolib.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8A073BD83CFBAA001679AFBA206E5569 /* move_0045.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0045.png; path = mottolib/Assets/move_0045.png; sourceTree = "<group>"; };
 		8A5F275E3BC541963D3A4F335530968C /* naver_process2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = naver_process2.png; path = mottolib/Assets/naver_process2.png; sourceTree = "<group>"; };
 		8A647400514AD50A8FDFFEBAD6F3A7C4 /* AdCrawlingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdCrawlingView.swift; sourceTree = "<group>"; };
@@ -594,7 +592,7 @@
 		9BC4C07B5157517426687B37117EA0E6 /* HumanNaverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HumanNaverViewController.swift; sourceTree = "<group>"; };
 		9CD3D9A8DA7694DE7FBE7EDA61F8E0A1 /* AdNPlaceAlarmSaveView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdNPlaceAlarmSaveView.swift; sourceTree = "<group>"; };
 		9CE06A0B73930FEF514E7E7C7D5ED1A2 /* mottolib-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "mottolib-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E18F8A58D4CDAB1FD3EE6AE9AE85AA5 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/Features/MultipartUpload.swift; sourceTree = "<group>"; };
 		A02693666C5A6A329A99D8924906325D /* BaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A091748A27FADF8C4AD3EE73BFE64FE3 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
@@ -634,7 +632,7 @@
 		BEA9321BE3FAE804324B3495F4B39C10 /* UnityAds-UnityAdsResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "UnityAds-UnityAdsResources"; path = UnityAdsResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF11E075DA88D7EBC058D67036946738 /* move_0053.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0053.png; path = mottolib/Assets/move_0053.png; sourceTree = "<group>"; };
 		BF1ECB17196503A29BA1296CD311DBE0 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		BFFF03350624AB7AD31F76922F27BE26 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BFFF03350624AB7AD31F76922F27BE26 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		C12EF7A054B3B488071CCCD2C22F8CEC /* icon_home_title_dark2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_home_title_dark2.png; path = mottolib/Assets/icon_home_title_dark2.png; sourceTree = "<group>"; };
 		C1AAD0750D595B24CB3E564501C91FE1 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Sources/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		C1EB5F65BBD6E023514C88332B18925B /* move_0055.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0055.png; path = mottolib/Assets/move_0055.png; sourceTree = "<group>"; };
@@ -702,7 +700,7 @@
 		EF4EA544C4AF2BDCDEC717AE11FE02CB /* move_0029.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = move_0029.png; path = mottolib/Assets/move_0029.png; sourceTree = "<group>"; };
 		EFB90D680DBE0E5B22E7F1E77714810B /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/Core/RequestTaskMap.swift; sourceTree = "<group>"; };
 		F0D18ABFE1AB0A5562C116F126D4549C /* AdBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdBaseView.swift; sourceTree = "<group>"; };
-		F0EFC4D84E3CCDA20228D3FB305C5DE0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = "static/VungleAdsSDK.xcframework/ios-arm64/VungleAdsSDK.framework/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		F0EFC4D84E3CCDA20228D3FB305C5DE0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "static/VungleAdsSDK.xcframework/ios-arm64/VungleAdsSDK.framework/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		F1264D396FF11EBEA5FE00C1F3F53FBD /* mottolib-mottolib */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "mottolib-mottolib"; path = mottolib.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14E39D9B32A17EB23524B52D73FA6B7 /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Features/Concurrency.swift; sourceTree = "<group>"; };
 		F1AD9C6E7939510828AA7A8C905AE212 /* Const.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -806,6 +804,7 @@
 			children = (
 				1FD564EF82DA2E906E79EC5DA34864CA /* Utils.swift */,
 			);
+			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -819,6 +818,7 @@
 				FA2C5F29EAEE1D98898B65F4B8BCEE42 /* AdUnitUnity.swift */,
 				94357F79B3E2116432FDB378A9E1665F /* AdUnitVungle.swift */,
 			);
+			name = adunit;
 			path = adunit;
 			sourceTree = "<group>";
 		};
@@ -969,6 +969,7 @@
 			children = (
 				EA7746EC88DF8FB9E3D8053A18250A51 /* DefaultResponseModel.swift */,
 			);
+			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -1020,6 +1021,7 @@
 				0C3D5D50FD7271ECEE0FB74F13506E09 /* Resources */,
 				83FA9717CACC9A4A6EC4E38D780D9EF1 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1049,6 +1051,7 @@
 				9AA13303B16862293BD5FE9312CCC990 /* UITextView+.swift */,
 				3B92861759997138AF77A076E44AD0C9 /* UIView+.swift */,
 			);
+			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -1060,6 +1063,7 @@
 				156373F15D7300405C81BC9CDE641997 /* AdNetworkViewController.swift */,
 				083488A7C76B9F85F39B2271E68AB416 /* adunit */,
 			);
+			name = ads;
 			path = ads;
 			sourceTree = "<group>";
 		};
@@ -1105,6 +1109,7 @@
 				95CFBE7EE9D0AAA7F65CE386AB31D226 /* TopTabBarView.swift */,
 				FEC2EBD8CB1D31380D9E897E1B3CE035 /* inapp */,
 			);
+			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -1175,6 +1180,7 @@
 			children = (
 				36B72716BA799B2E50932045B210C143 /* Model */,
 			);
+			name = Network;
 			path = Network;
 			sourceTree = "<group>";
 		};
@@ -1193,6 +1199,7 @@
 			children = (
 				4AA623BD52BC23B5ED3379CE98AFD52C /* SiteTrafficInappViewController.swift */,
 			);
+			name = inapp;
 			path = inapp;
 			sourceTree = "<group>";
 		};
@@ -1212,6 +1219,7 @@
 			children = (
 				3AC4653E6866CC1C7EA3B2FA9847351E /* TopTabBarCollectionViewCell.swift */,
 			);
+			name = Cells;
 			path = Cells;
 			sourceTree = "<group>";
 		};
@@ -1222,6 +1230,7 @@
 				9BC4C07B5157517426687B37117EA0E6 /* HumanNaverViewController.swift */,
 				0F2AC08BB045BB1A9CFCD25831E49164 /* SiteTrafficViewController.swift */,
 			);
+			name = human;
 			path = human;
 			sourceTree = "<group>";
 		};
@@ -1263,6 +1272,7 @@
 				D65DB2E37B97E95AE05FF61D9B9CC536 /* Resources */,
 				7C2839CBF91EEFD9C0A8A6EDC9B2BA88 /* Support Files */,
 			);
+			name = VungleAds;
 			path = VungleAds;
 			sourceTree = "<group>";
 		};
@@ -1297,6 +1307,7 @@
 				F1AD9C6E7939510828AA7A8C905AE212 /* Const.swift */,
 				E5B75B4C3DA17B72B96AAD31BDCB32E9 /* Images.swift */,
 			);
+			name = Literal;
 			path = Literal;
 			sourceTree = "<group>";
 		};
@@ -1353,6 +1364,7 @@
 				FA3AD7551C24E5CD3D07BDC4BB60F171 /* UILayoutSupport+Extensions.swift */,
 				66AC5B4F3BB7E65AAF1AFA74A23DFF87 /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1374,6 +1386,7 @@
 				4431CDE9F0A370ED7A253592A3A94930 /* Then.swift */,
 				A11B8EBAEA8069406CD2ABC69411914A /* Support Files */,
 			);
+			name = Then;
 			path = Then;
 			sourceTree = "<group>";
 		};
@@ -1419,6 +1432,7 @@
 				9D7ED141DB0A1BE24256703580007433 /* human */,
 				8D5E3217E408BC1E94965DD7DA02643F /* inapp */,
 			);
+			name = VCs;
 			path = VCs;
 			sourceTree = "<group>";
 		};
@@ -1436,6 +1450,7 @@
 			children = (
 				4241255FA8136A4651B18BE1578F719D /* gmarketsansbold.ttf */,
 			);
+			name = font;
 			path = font;
 			sourceTree = "<group>";
 		};
@@ -1446,6 +1461,7 @@
 				832AA1F905AC86982CF40F26D29C524B /* Resources */,
 				1BE8D3EB52C617E4753FA646A4CE157B /* Support Files */,
 			);
+			name = UnityAds;
 			path = UnityAds;
 			sourceTree = "<group>";
 		};
@@ -1470,6 +1486,7 @@
 			children = (
 				8EB6DD9D0B7BC5A2F85197216194ADED /* AdInstagramView.swift */,
 			);
+			name = inapp;
 			path = inapp;
 			sourceTree = "<group>";
 		};
@@ -2735,7 +2752,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
