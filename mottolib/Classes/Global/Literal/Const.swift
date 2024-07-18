@@ -83,6 +83,7 @@ enum Description {
     static let ticketing = "이용권 캠페인 생성중입니다.\n잠시후에 다시 확인해주세요"
     static let loadCampaign = "이용권 캠페인을 불러오는 중입니다.\n잠시만 기다려 주세요"
     static let receiveCampaign = "캠페인이 도착하였습니다"
+    static let receiveCampaign2 = "이용권은 해당 회차에서 사용가능\n(회차변경 시 보유이용권 소멸됩니다)"
     static let choiceBlog = "공유 클릭 > 블로그를 선택해주세요!"
     static let unMissioning = "미션이 수행되지 않았습니다.\n다시 한번 확인해주세요."
     static let retryAnswer = "정답이 틀립니다.\n다시 한번 확인해주세요."

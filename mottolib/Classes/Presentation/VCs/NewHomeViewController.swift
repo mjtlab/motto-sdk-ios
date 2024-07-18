@@ -197,7 +197,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     let midTicketButton = UIButton().then {
-        $0.alignMainButton(context: NewHomeViewController.self, imageName: "icon_ticket", textValue: "이용권 충전하기")
+        $0.alignMainButton(context: NewHomeViewController.self, imageName: "icon_ticket", textValue: "이용권 + 캐시")
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     let midMottoCompleteLabel = UILabel().then {
@@ -646,7 +646,10 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                             self.notiDataSource.append(arr[i])
                         }
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.topNoticeTableView.reloadData()
+                        self.topNoticeTableView.layoutIfNeeded()
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
                             self.notiTimerStart(duration: 1.0)
                         }
                     }
@@ -671,11 +674,14 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
             if self.notiDataSource.count > 1 {
                 self.topNoticeTableView.scrollToBottom(completion: {
-                    self.notiDataSource.append(self.notiDataSource[0])
-                    self.notiDataSource.remove(at: 0)
+                    UIView.performWithoutAnimation {
+                        self.notiDataSource.append(self.notiDataSource[0])
+                        self.notiDataSource.remove(at: 0)
+                        self.topNoticeTableView.reloadData()
+                        self.topNoticeTableView.layoutIfNeeded()
                     
-                    DispatchQueue.main.async { self.topNoticeTableView.reloadData() }
-                    self.topNoticeTableView.scrollToTops(completion: {self.notiTimerStart(duration: 0)})
+                        self.topNoticeTableView.scrollToTops(completion: {self.notiTimerStart(duration: 0)})
+                    }
                 })
             }
         }
@@ -951,7 +957,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {     
             if datas.count == 3 {
 //                let alert = UIAlertController(title: "", message: "[이용권 \(datas[0])장]", preferredStyle: .alert)
-                let alert = UIAlertController(title: "", message: "[이용권 \(datas[0])장]\n\(datas[1])\(datas[2]) 적립", preferredStyle: .alert)
+                let alert = UIAlertController(title: "미션 성공", message: "[이용권 \(datas[0])장]\n\(datas[1].trimmingCharacters(in: .whitespaces)) \(datas[2].trimmingCharacters(in: .whitespaces)) 적립\n\n이용권은 해당 회차에서 사용가능\n(회차변경 시 보유이용권 소멸됩니다)", preferredStyle: .alert)
                 let yes = UIAlertAction(title: "확인", style: .default) {_ in
                     self.dismiss(animated: false)
                 }
@@ -959,14 +965,14 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                 self.present(alert, animated: true, completion: nil)
             } else {
                 if getValue > 0 {
-                    let alert = UIAlertController(title: "", message: "[이용권 \(getValue)장]", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "미션 성공", message: "[이용권 \(getValue)장]", preferredStyle: .alert)
                     let yes = UIAlertAction(title: "확인", style: .default) {_ in
                         self.dismiss(animated: false)
                     }
                     alert.addAction(yes)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "", message: "이미 참여완료한 미션입니다!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "₩", message: "이미 참여완료한 미션입니다!", preferredStyle: .alert)
                     let yes = UIAlertAction(title: "확인", style: .default) {_ in
                         self.dismiss(animated: false)
                     }
@@ -1005,7 +1011,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                         Motto.myTicket = responseDataInt
                         // 숫자 리턴
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            self.midBalloonLabel.text = "남은횟수 \(responseDataInt)번"
+                            self.midBalloonLabel.text = "이용권 \(responseDataInt)장"
                         }
                     }
                 case .failure(let error):
@@ -1131,7 +1137,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                     
                     // 다이얼로그뷰 UI 변경처리. noti를 보낸다.
                     NotificationCenter.default.post(name: .mission, object: 0)
-                    } else {
+                } else {
                     guard let responseData = afModel.data else { return }
                     if responseData.contains(",") {
                         let arr = responseData.components(separatedBy: ",")
@@ -1279,6 +1285,17 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                 })
             }
         })
+    }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard let url = navigationAction.request.url?.absoluteString else { return }
+        if url.contains("kakao.com") {
+            
+            Utils.consoleLog("url", url, true)
+            UIApplication.shared.open(navigationAction.request.url!, options: [:])
+            decisionHandler(.cancel)
+        } else {
+            decisionHandler(.allow)
+        }
     }
     
     private func loadWebView(wv webView: WKWebView, url moveUrl: String) {

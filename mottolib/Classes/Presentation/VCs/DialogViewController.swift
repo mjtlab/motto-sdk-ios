@@ -33,13 +33,15 @@ final class DialogViewController: UIViewController {
         
     }
     func alertMsg() {
+        guard let pvc = self.presentingViewController else { return }
+        
         self.dismiss(animated: false)
         
         let alert = UIAlertController(title: Title.notice, message: Description.ticketing, preferredStyle: .alert)
         let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
         }
         alert.addAction(yes)
-        self.present(alert, animated: true)
+        pvc.present(alert, animated: true)
     }
     
     func goMission() {

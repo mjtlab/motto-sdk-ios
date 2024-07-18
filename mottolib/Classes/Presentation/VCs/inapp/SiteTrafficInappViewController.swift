@@ -195,7 +195,7 @@ class SiteTrafficInappViewController: BaseCampaignViewController {
         
         contentsView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self.view.safeAreaLayoutGuide)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(5)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         bodyStackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -443,7 +443,11 @@ class SiteTrafficInappViewController: BaseCampaignViewController {
         if index < scriptList.count {
             let script = scriptList[index]
             LoadingIndicator.showLoading()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            var addtime = 0.25
+            if script.contains("검색결과 더보기") {
+                addtime = 0.8
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + addtime) {
                 Utils.consoleLog("script", script, true)
                 self.executeScript(script: script)
             }

@@ -44,6 +44,12 @@ class DialogView: UIView {
     }
     private let descLabel = UILabel().then {
         $0.textColor = .black
+        $0.font = .boldSystemFont(ofSize: 15)
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+    }
+    private let descLabel2 = UILabel().then {
+        $0.textColor = .darkGray
         $0.font = .systemFont(ofSize: 14)
         $0.numberOfLines = 0
         $0.textAlignment = .center
@@ -69,7 +75,7 @@ class DialogView: UIView {
         self.addSubview(self.popupView)
         [self.titleLabel, self.slotView, self.slotBorderView, self.bodyStackView, self.centerButton]
             .forEach(self.popupView.addSubview(_:))
-        [self.descLabel]
+        [self.descLabel, self.descLabel2]
             .forEach(self.bodyStackView.addArrangedSubview(_:))
         
         self.popupView.snp.makeConstraints {
@@ -144,6 +150,7 @@ class DialogView: UIView {
             }
             self.centerButton.isEnabled = true
             self.descLabel.text = Description.receiveCampaign
+            self.descLabel2.text = Description.receiveCampaign2
         }
     }
     

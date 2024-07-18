@@ -127,16 +127,14 @@ pod 'mottolib'
 * 유저가 Motto의 미션을 완료시 보상을 받을 수 있도록 유저를 식별 할 수 있는 유니크한 ID를 설정해야 합니다.(대체할 ID나 코드가 없다면 실제 회원의 ID라도 설정해야합니다.)
 * 구글광고 아이디는 앱에서 이미 수집하고 있으시면 설정해주시길 바랍니다.<br>
   더 정확한 사용자 참여를 확인하기 위한 용도로 사용되며 생략하셔도 무방합니다.
-```swift
-Motto.uid = [userID]        // 유저식별 값(아이디 혹은 유저를 판별할 수 있는 유니크한 값)
-Motto.adid = [googleAdId]   // 구글 광고아이디(생략가능)
-Motto.pubkey = [앱키]        // 비즈핏에서 발급받은 앱키          
-```
 * Motto SDK를 사용하고자 하는 ViewController에서 아래와 같이 생성합니다.
 ```swift
 let viewcontroller = Motto.create()
-self.view.addSubview(viewcontroller.view)
-        
+Motto.uid = [userID]        // 유저식별 값(아이디 혹은 유저를 판별할 수 있는 유니크한 값)
+Motto.adid = [googleAdId]   // 구글 광고아이디(생략가능)
+Motto.pubkey = [앱키]        // 비즈핏에서 발급받은 앱키 
+
+self.view.addSubview(viewcontroller.view)        
 viewcontroller.view.snp.makeConstraints { make in
     make.top.left.right.bottom.equalTo(self.view.safeAreaLayoutGuide)
 }      

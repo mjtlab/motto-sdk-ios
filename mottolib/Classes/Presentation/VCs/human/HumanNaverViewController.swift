@@ -115,14 +115,14 @@ class HumanNaverViewController: BaseCampaignViewController {
             [unowned self] notification in
             // background --> foreground
             Motto.currentSharedUrl = UIPasteboard.general.string ?? ""
-            if Motto.currentSharedUrl.starts(with: "http") {
+//            if Motto.currentSharedUrl.starts(with: "http") {
                 Utils.consoleLog("Motto.currentSharedUrl", Motto.currentSharedUrl, true)
                 if Motto.currentSharedUrl != "" {
                     webView.evaluateJavaScript("javascript:popupAnswerWithSharedText('\(String(describing: Motto.currentSharedUrl.removingPercentEncoding ?? ""))');")
                     
                     Motto.currentSharedUrl = ""
                 }
-            }
+//            }
         }
     }
     
