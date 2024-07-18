@@ -39,16 +39,14 @@ pod 'mottolib'
 * To use Motto SDK, initialization is required first.
 * A unique ID must be set to identity the user so that the user can receive rewards upon completing Motto's mission.(If there is no replacement ID or code, you must set the ID of an actual member.)
 * If you have already collected the Google Advertising ID in the app, please set it. It is optional.
-```swift
-Motto.uid = [userID]        // user id(or unique value of user)
-Motto.adid = [googleAdId]   // google adid
-Motto.pubkey = [app-key]    // app key     
-```
 * Create the Motto SDK from the ViewController that you want to use as follows.
 ```swift
 let viewcontroller = Motto.create()
-self.view.addSubview(viewcontroller.view)
-        
+Motto.uid = [userID]        // user id(or unique value of user)
+Motto.adid = [googleAdId]   // google adid
+Motto.pubkey = [app-key]    // app key   
+
+self.view.addSubview(viewcontroller.view)        
 viewcontroller.view.snp.makeConstraints { make in
     make.top.left.right.bottom.equalTo(self.view.safeAreaLayoutGuide)
 }      
