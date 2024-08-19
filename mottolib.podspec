@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mottolib'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'Motto SDK-iOS'
   s.swift_version    = '5.0'
 
@@ -55,6 +55,7 @@ Pod::Spec.new do |s|
 
    # s.public_header_files = 'Pod/Classes/**/*.h'
    s.static_framework = true
+   s.vendored_frameworks = "mottolib.framework"
    
    s.frameworks = 'UIKit', 'WebKit', 'Foundation', 'CFNetwork'
    s.dependency 'SnapKit', '~> 5.6.0'
