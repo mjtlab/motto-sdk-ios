@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'mottolib'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'Motto SDK-iOS'
   s.swift_version    = '5.0'
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'daybreaker48' => 'prof.dagian@gmail.com' }
-  s.source           = { :git => 'https://github.com/mjtlab/motto-sdk-ios-sample.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/mjtlab/motto-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '15.0'
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
  #  }
 
    # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.static_framework = true
+   # s.static_framework = true
    # s.vendored_frameworks = "mottolib.xcframework"
    
    s.frameworks = 'UIKit', 'WebKit', 'Foundation', 'CFNetwork'
