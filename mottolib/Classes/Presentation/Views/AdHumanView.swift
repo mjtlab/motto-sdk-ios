@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import WebKit
+import MottoFrameworks
 
 class AdHumanView: AdBaseView {
     var launchHuman: Bool = false
@@ -115,8 +116,8 @@ class AdHumanView: AdBaseView {
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                    let alert = UIAlertController(title: Title.wrongAnswer, message: Description.retryAnswer, preferredStyle: .alert)
-                    let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                    let alert = UIAlertController(title: Global.wrongAnswer, message: Global.retryAnswer, preferredStyle: .alert)
+                    let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                         self.parentVC?.dismiss(animated: false)
                     }
                     alert.addAction(yes)

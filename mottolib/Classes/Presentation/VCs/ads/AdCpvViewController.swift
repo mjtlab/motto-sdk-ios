@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class AdCpvViewController: BaseCampaignViewController {
     
@@ -188,7 +189,7 @@ class AdCpvViewController: BaseCampaignViewController {
         backButton.addTarget(self, action: #selector(sendBackAction), for: .touchUpInside)
         completeButton.addTarget(self, action: #selector(sendOkRequest), for: .touchUpInside)
         
-        let urlString = Domains.campaignURL + "main_ad_cpx.php?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
+        let urlString = Motto.currentDomain + Global.campaignURL + Global.AdCpcController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
         Utils.consoleLog("urlString", urlString, true)
         loadWebView(wv: webView, url: urlString)
     }

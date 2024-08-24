@@ -10,6 +10,7 @@ import SnapKit
 import Then
 import Alamofire
 import WebKit
+import MottoFrameworks
 
 enum InstagramCampaignType: Int {
     case FOLLOW = 120
@@ -1107,9 +1108,9 @@ class AdInstagramView: AdBaseView {
     }
     
     @objc func requestReward() {
-        let parameters = ["what": "ms_done", "pk": Motto.pubkey, "uid": Motto.uid, "pcode": pCode, "jmethod": String(joinMethod), "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
+        let parameters = ["what": Global.MissionComplete, "pk": Motto.pubkey, "uid": Motto.uid, "pcode": pCode, "jmethod": String(joinMethod), "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
         AF.request(
-            Motto.currentDomain + Domains.msPath + "ms_done.php",
+            Motto.currentDomain + Global.msPath + Global.MissionCompleteController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)

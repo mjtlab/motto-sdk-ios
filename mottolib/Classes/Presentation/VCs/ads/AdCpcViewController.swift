@@ -6,6 +6,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class AdCpcViewController: BaseCampaignViewController {
     
@@ -52,7 +53,7 @@ class AdCpcViewController: BaseCampaignViewController {
     let tipLabel = UILabel().then {
         $0.backgroundColor = .clear
         $0.textColor = .white
-        $0.text = Description.ad_cpc_guide_warning
+        $0.text = Global.ad_cpc_guide_warning
         $0.font = .systemFont(ofSize: 14)
         $0.numberOfLines = 0
     }
@@ -205,7 +206,7 @@ class AdCpcViewController: BaseCampaignViewController {
         adImageView.addGestureRecognizer(tapGesture)
         adImageView.isUserInteractionEnabled = true
         
-        let urlString = Domains.campaignURL + "main_ad_cpx.php?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
+        let urlString = Motto.currentDomain + Global.campaignURL + Global.AdCpcController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
         Utils.consoleLog("urlString", urlString, true)
         loadWebView(wv: webView, url: urlString)
     }

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import MottoFrameworks
 
 final class IndexViewController: UIViewController {
     private var currentPageIndex = 0 {
@@ -114,15 +115,15 @@ extension IndexViewController: TopTabBarViewProtocol {
     func moveToTargetViewController(index: Int) {
         if index == 1 || index == 2 {
             if Motto.uid == "" {
-                let alert = UIAlertController(title: Title.serviceInfo, message: Description.needLogin, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .destructive) {_ in
+                let alert = UIAlertController(title: Global.serviceInfo, message: Global.needLogin, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .destructive) {_ in
                     // 로그인 이동
                     let viewcontroller = AccountViewController()
                     viewcontroller.dataFromVC = "SELF"
                     viewcontroller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
                     self.present(viewcontroller, animated: true, completion: nil)
                 }
-                let no = UIAlertAction(title: Dialog.cancel, style: .cancel, handler: nil)
+                let no = UIAlertAction(title: Global.cancel, style: .cancel, handler: nil)
                 
                 alert.addAction(no)
                 alert.addAction(yes)

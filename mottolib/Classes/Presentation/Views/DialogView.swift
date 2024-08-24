@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MottoFrameworks
 
 class DialogView: UIView {
     
@@ -65,8 +66,8 @@ class DialogView: UIView {
     
     init() {
         self.titleLabel.text = "\(Motto.currentRound)회"
-        self.descLabel.text = Description.loadCampaign
-        self.centerButton.setTitle(Dialog.ok, for: .normal)
+        self.descLabel.text = Global.loadCampaign
+        self.centerButton.setTitle(Global.ok, for: .normal)
         super.init(frame: .zero)
         
         self.backgroundColor = .black.withAlphaComponent(0.3)
@@ -147,8 +148,8 @@ class DialogView: UIView {
                 }
             }
             self.centerButton.isEnabled = true
-            self.descLabel.text = Description.receiveCampaign
-            self.descLabel2.text = Description.receiveCampaign2
+            self.descLabel.text = Global.receiveCampaign
+            self.descLabel2.text = Global.receiveCampaign2
         }
     }
     

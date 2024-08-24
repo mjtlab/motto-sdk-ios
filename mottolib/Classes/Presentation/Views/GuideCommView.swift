@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import MottoFrameworks
 
 class GuideCommView: UIView {
 //    @Binding var isShowing: Bool
@@ -42,7 +43,7 @@ class GuideCommView: UIView {
         $0.distribution = .fillProportionally
     }
     let subjectLoginLabel = UILabel().then {
-        $0.text = Words.naverLogin
+        $0.text = Global.naverLogin
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 22)
         $0.numberOfLines = 0
@@ -53,7 +54,7 @@ class GuideCommView: UIView {
         $0.clipsToBounds = true
     }
     let descriptionLoginLabel = UILabel().then {
-        $0.text = Description.loginNaver
+        $0.text = Global.loginNaver
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
         $0.numberOfLines = 0
@@ -72,7 +73,7 @@ class GuideCommView: UIView {
     let centerLoginButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Dialog.ok, for: .normal)
+        $0.setTitle(Global.ok, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -91,7 +92,7 @@ class GuideCommView: UIView {
         $0.distribution = .fillProportionally
     }
     let subjectGoodsLabel = UILabel().then {
-        $0.text = Words.findStore
+        $0.text = Global.findStore
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 20)
         $0.numberOfLines = 0
@@ -123,7 +124,7 @@ class GuideCommView: UIView {
     let partGoodsButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -132,7 +133,7 @@ class GuideCommView: UIView {
     let closeGoodsButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -151,7 +152,7 @@ class GuideCommView: UIView {
         $0.distribution = .fillProportionally
     }
     let subjectPlaceLabel = UILabel().then {
-        $0.text = Words.clickMore
+        $0.text = Global.clickMore
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 20)
         $0.numberOfLines = 0
@@ -183,7 +184,7 @@ class GuideCommView: UIView {
     let partPlaceButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -192,7 +193,7 @@ class GuideCommView: UIView {
     let closePlaceButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -237,7 +238,7 @@ class GuideCommView: UIView {
     let partShopButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -246,7 +247,7 @@ class GuideCommView: UIView {
     let closeShopButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -266,7 +267,7 @@ class GuideCommView: UIView {
     }
     let subjectFailLabel = UILabel().then {
         $0.textColor = .black
-        $0.text = Words.failMission
+        $0.text = Global.failMission
         $0.font = .boldSystemFont(ofSize: 25)
         $0.numberOfLines = 0
         $0.textAlignment = .center
@@ -314,7 +315,7 @@ class GuideCommView: UIView {
     let centerFailButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Dialog.ok, for: .normal)
+        $0.setTitle(Global.ok, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -334,7 +335,7 @@ class GuideCommView: UIView {
     }
     let subjectTrafficLabel = UILabel().then {
         $0.textColor = .black
-        $0.text = Words.tourStore
+        $0.text = Global.tourStore
         $0.font = .boldSystemFont(ofSize: 25)
         $0.numberOfLines = 0
         $0.textAlignment = .center
@@ -371,7 +372,7 @@ class GuideCommView: UIView {
     let centerTrafficButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 20)
-        $0.setTitle(Dialog.ok, for: .normal)
+        $0.setTitle(Global.ok, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5

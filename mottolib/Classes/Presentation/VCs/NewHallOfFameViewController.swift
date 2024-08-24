@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class NewHallOfFameViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
@@ -107,7 +108,7 @@ class NewHallOfFameViewController: UIViewController, UIWebViewDelegate, WKNaviga
         
         frameView.addSubview(WebView)
         
-        loadWebView(wv: WebView, url: Domains.hallURL)
+        loadWebView(wv: WebView, url: Global.hallURL)
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {

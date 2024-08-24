@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import MottoFrameworks
 
 class GuideView: UIView {
     var parentVC: GuideViewController?
@@ -31,7 +32,7 @@ class GuideView: UIView {
         $0.alignment = .center
     }
     let subjectLabel = UILabel().then {
-        $0.text = Words.save
+        $0.text = Global.save
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 22)
         $0.numberOfLines = 0
@@ -44,7 +45,7 @@ class GuideView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     let descriptionLabel = UILabel().then {
-        $0.text = Description.clickSave
+        $0.text = Global.clickSave
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
         $0.numberOfLines = 0
@@ -72,7 +73,7 @@ class GuideView: UIView {
     let partButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -82,7 +83,7 @@ class GuideView: UIView {
     let closeButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -101,7 +102,7 @@ class GuideView: UIView {
         $0.alignment = .center
     }
     let subjectAlarmLabel = UILabel().then {
-        $0.text = Words.alarm_save
+        $0.text = Global.alarm_save
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 22)
         $0.numberOfLines = 0
@@ -114,7 +115,7 @@ class GuideView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     let descriptionAlarmLabel = UILabel().then {
-        $0.text = Description.clickAlarm
+        $0.text = Global.clickAlarm
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 15)
         $0.numberOfLines = 0
@@ -142,7 +143,7 @@ class GuideView: UIView {
     let partAlarmButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -152,7 +153,7 @@ class GuideView: UIView {
     let closeAlarmButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -171,7 +172,7 @@ class GuideView: UIView {
         $0.alignment = .center
     }
     let subjectBlogLabel = UILabel().then {
-        $0.text = Words.share
+        $0.text = Global.share
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 22)
         $0.numberOfLines = 0
@@ -182,7 +183,7 @@ class GuideView: UIView {
         $0.clipsToBounds = true
     }
     let descriptionBlogLabel = UILabel().then {
-        $0.text = Description.clickShare
+        $0.text = Global.clickShare
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
         $0.numberOfLines = 0
@@ -206,7 +207,7 @@ class GuideView: UIView {
     let partBlogButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -215,7 +216,7 @@ class GuideView: UIView {
     let closeBlogButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -233,7 +234,7 @@ class GuideView: UIView {
         $0.alignment = .center
     }
     let subjectBlog2Label = UILabel().then {
-        $0.text = Words.shareAndCheck
+        $0.text = Global.shareAndCheck
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 22)
         $0.numberOfLines = 0
@@ -244,7 +245,7 @@ class GuideView: UIView {
         $0.clipsToBounds = true
     }
     let descriptionBlog2Label = UILabel().then {
-        $0.text = Description.clickShareAndCheck
+        $0.text = Global.clickShareAndCheck
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
         $0.numberOfLines = 0
@@ -266,7 +267,7 @@ class GuideView: UIView {
     let partBlog2Button = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -275,7 +276,7 @@ class GuideView: UIView {
     let closeBlog2Button = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5

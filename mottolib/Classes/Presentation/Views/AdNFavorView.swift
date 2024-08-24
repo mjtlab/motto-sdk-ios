@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import WebKit
+import MottoFrameworks
 
 class AdNFavorView: AdCrawlingView {
     
@@ -46,7 +47,7 @@ class AdNFavorView: AdCrawlingView {
         $0.isHidden = true
         $0.backgroundColor = .red
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.confirmMission, for: .normal)
+        $0.setTitle(Global.confirmMission, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -121,7 +122,7 @@ class AdNFavorView: AdCrawlingView {
             pageType == MissionPageTypes.DBUrl4 {
             
             parentVC?.visibleTitleBar(visible: true)
-            if adrole == MLDefine.MT_NFavorProduct {
+            if adrole == Global.MT_NFavorProduct {
                 zzimProcess(pageType: pageType)
             } else {
                 alarmProcess(pageType: pageType)
@@ -138,9 +139,9 @@ class AdNFavorView: AdCrawlingView {
             case .NaverHome, .NaverShopping:
                 Utils.consoleLog("joinMethod", joinMethod)
                 Utils.consoleLog("adrole", adrole)
-                Utils.consoleLog("adrole == MLDefine.MT_NFavorStore", adrole == MLDefine.MT_NFavorStore)
+                Utils.consoleLog("adrole == MLDefine.MT_NFavorStore", adrole == Global.MT_NFavorStore)
                 if joinMethod == 1 || joinMethod == 2 {
-                    let skipLogic: Bool = (joinMethod == 2 && adrole == MLDefine.MT_NFavorStore)
+                    let skipLogic: Bool = (joinMethod == 2 && adrole == Global.MT_NFavorStore)
                     Utils.consoleLog("skipLogic", skipLogic)
                     if !skipLogic {
                         var searchKeyword: String = extractKeywordFromUrl(url: detailUrls[0])
@@ -164,7 +165,7 @@ class AdNFavorView: AdCrawlingView {
                 if(productKey.count > 0 && url.contains(productKey)) {
                     return
                 }
-                if url.contains(MLDefine.NaverMapUrl) {
+                if url.contains(Global.NaverMapUrl) {
                     return
                 }
                 
@@ -328,8 +329,8 @@ class AdNFavorView: AdCrawlingView {
         }
         if(code == 11) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                let alert = UIAlertController(title: Title.unMission, message: Description.unMissioning, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.unMission, message: Global.unMissioning, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                     self.parentVC?.dismiss(animated: false)
                 }
                 alert.addAction(yes)

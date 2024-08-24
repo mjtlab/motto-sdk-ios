@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class MyMottoViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate {
 
@@ -48,7 +49,7 @@ class MyMottoViewController: UIViewController, UIWebViewDelegate, WKNavigationDe
             make.top.left.right.bottom.equalToSuperview()
         }
         
-        loadWebView(wv: WebView, url: Domains.myMottoURL + Motto.pubkey + "&uid=\(Motto.uid)")
+        loadWebView(wv: WebView, url: Motto.currentDomain + Global.myMottoURL + Motto.pubkey + "&uid=\(Motto.uid)")
     }
     
     @objc func mainRefresh() {

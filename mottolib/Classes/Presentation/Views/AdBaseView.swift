@@ -10,6 +10,7 @@ import WebKit
 import SnapKit
 import Then
 import Alamofire
+import MottoFrameworks
 
 class AdBaseView: UIView, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     // MARK: - property
@@ -73,9 +74,9 @@ class AdBaseView: UIView, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate,
     func sendOkRequest() {
         let pcode = Motto.pcode
         
-        let parameters = ["what": "ms_done", "pk": Motto.pubkey, "uid": Motto.uid, "pcode": pcode, "jmethod": String(joinMethod), "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
+        let parameters = ["what": Global.MissionComplete, "pk": Motto.pubkey, "uid": Motto.uid, "pcode": pcode, "jmethod": String(joinMethod), "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
         AF.request(
-            Motto.currentDomain + Domains.msPath + "ms_done.php",
+            Motto.currentDomain + Global.msPath + Global.MissionCompleteController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -91,8 +92,8 @@ class AdBaseView: UIView, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate,
                 if afModel.result == -1 {
                     Utils.consoleLog("Network Response data FAIL(ms_done.php)")
                     
-                    let alert = UIAlertController(title: Title.failTicket, message: afModel.message, preferredStyle: .alert)
-                    let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                    let alert = UIAlertController(title: Global.failTicket, message: afModel.message, preferredStyle: .alert)
+                    let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                         self.parentVC?.dismiss(animated: true)
                     }
                     alert.addAction(yes)
@@ -107,8 +108,8 @@ class AdBaseView: UIView, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate,
             case .failure(let error):
                 Utils.consoleLog("Network Response FAIL(ms_done.php)", error)
                 // 실패
-                let alert = UIAlertController(title: Title.failTicket, message: afModel.message, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.failTicket, message: afModel.message, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                     self.parentVC?.dismiss(animated: true)
                 }
                 alert.addAction(yes)
@@ -151,17 +152,17 @@ class AdBaseView: UIView, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate,
                     return MissionPageTypes.PlaceBookmark
                 }
             }
-        } else if url.contains(MLDefine.GoogleHomeUrl) {
+        } else if url.contains(Global.GoogleHomeUrl) {
             return MissionPageTypes.GoogleSearch
-        } else if url == MLDefine.NaverHomeUrl {
+        } else if url == Global.NaverHomeUrl {
             return MissionPageTypes.NaverHome
-        } else if url == MLDefine.NaverMapUrl || url == MLDefine.NaverMapUrl2 {
+        } else if url == Global.NaverMapUrl || url == Global.NaverMapUrl2 {
             return MissionPageTypes.NaverMap
-        } else if url.contains(MLDefine.NaverShoppingUrl) || url.contains(MLDefine.NaverShoppingUrl2) {
+        } else if url.contains(Global.NaverShoppingUrl) || url.contains(Global.NaverShoppingUrl2) {
             return MissionPageTypes.NaverShopping
         } else if url.contains("OpenScrapForm") || url.contains("m.blog.naver.com/ScrapForm") {
             return MissionPageTypes.PlaceBlog
-        } else if url.contains(MLDefine.NaverNidUrl) {
+        } else if url.contains(Global.NaverNidUrl) {
             return MissionPageTypes.NaverLogin
         } else if url.contains(Motto.currentDomain) {
             return MissionPageTypes.OurServer
@@ -310,10 +311,10 @@ class AdBaseView: UIView, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate,
     
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
         let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: Dialog.cancel, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Global.cancel, style: .cancel) { _ in
             completionHandler(false)
         }
-        let okAction = UIAlertAction(title: Dialog.ok, style: .default) { _ in
+        let okAction = UIAlertAction(title: Global.ok, style: .default) { _ in
             completionHandler(true)
         }
         alertController.addAction(cancelAction)

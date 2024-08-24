@@ -7,6 +7,7 @@
 
 import UIKit
 //import SwiftUI
+import MottoFrameworks
 
 class FavorView: UIView {
     var parentVC: FavorViewController?
@@ -32,7 +33,7 @@ class FavorView: UIView {
         $0.alignment = .center
     }
     let subjectLabel = UILabel().then {
-        $0.text = Words.alarm
+        $0.text = Global.alarm
         $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 22)
         $0.numberOfLines = 0
@@ -43,7 +44,7 @@ class FavorView: UIView {
         $0.clipsToBounds = true
     }
     let descriptionLabel = UILabel().then {
-        $0.text = Description.requestAlarm
+        $0.text = Global.requestAlarm
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 16)
         $0.numberOfLines = 0
@@ -65,7 +66,7 @@ class FavorView: UIView {
     let partButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -74,7 +75,7 @@ class FavorView: UIView {
     let closeButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -128,7 +129,7 @@ class FavorView: UIView {
     let partZzimButton = UIButton().then {
         $0.backgroundColor = UIColor(hexCode: "f8a726")
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.part, for: .normal)
+        $0.setTitle(Global.part, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5
@@ -137,7 +138,7 @@ class FavorView: UIView {
     let closeZzimButton = UIButton().then {
         $0.backgroundColor = .lightGray
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.close, for: .normal)
+        $0.setTitle(Global.close, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 5

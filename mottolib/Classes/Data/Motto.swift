@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MottoFrameworks
 
 
 public class Motto {
@@ -33,7 +34,7 @@ public class Motto {
     static var jmethod: Int = 1
     
     static var routeString = "DEBUG"
-    static var currentDomain = Domains.debugURL
+    static var currentDomain = Global.debugURL
     
     /* 6개 번호 추첨 */
     static func startSlotNumber() -> [Int] {
@@ -88,9 +89,9 @@ public class Motto {
         routeString = route
         
         if routeString.contains("DEBUG") {
-            Motto.currentDomain = Domains.debugURL
+            Motto.currentDomain = Global.debugURL
         } else if routeString.contains("RELEASE") {
-            Motto.currentDomain = Domains.releaseURL
+            Motto.currentDomain = Global.releaseURL
         }
         let viewController = IndexViewController()
         return viewController

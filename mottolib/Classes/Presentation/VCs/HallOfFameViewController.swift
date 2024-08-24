@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class HallOfFameViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
@@ -36,7 +37,7 @@ class HallOfFameViewController: UIViewController, UIWebViewDelegate, WKNavigatio
             make.top.left.right.bottom.equalToSuperview()
         }
         
-        loadWebView(wv: WebView, url: Domains.hallURL + Motto.pubkey + "&uid=\(Motto.uid)")
+        loadWebView(wv: WebView, url: Global.hallURL + Motto.pubkey + "&uid=\(Motto.uid)")
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {

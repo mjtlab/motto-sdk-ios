@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import MottoFrameworks
 
 final class DialogViewController: UIViewController {
     
@@ -37,8 +38,8 @@ final class DialogViewController: UIViewController {
         
         self.dismiss(animated: false)
         
-        let alert = UIAlertController(title: Title.notice, message: Description.ticketing, preferredStyle: .alert)
-        let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+        let alert = UIAlertController(title: Global.notice, message: Global.ticketing, preferredStyle: .alert)
+        let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
         }
         alert.addAction(yes)
         pvc.present(alert, animated: true)

@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 import Alamofire
+import MottoFrameworks
 
 class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
@@ -72,9 +73,9 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     }
     
     @objc func sendOkRequest() {
-        let parameters = ["what": "ms_done", "pk": Motto.pubkey, "uid": Motto.uid, "pcode": Motto.pcode, "jmethod": Motto.jmethod, "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
+        let parameters = ["what": Global.MissionComplete, "pk": Motto.pubkey, "uid": Motto.uid, "pcode": Motto.pcode, "jmethod": Motto.jmethod, "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
         AF.request(
-            Motto.currentDomain + Domains.msPath + "ms_done.php",
+            Motto.currentDomain + Global.msPath + Global.MissionCompleteController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -90,13 +91,13 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
                 if afModel.result == -1 {
                     Utils.consoleLog("Network Response data FAIL(ms_done.php)")
                     
-                    let alert = UIAlertController(title: Title.wrongProcess, message: afModel.message, preferredStyle: .alert)
-                    let retryActon = UIAlertAction(title: Dialog.retry_, style: .default) {_ in
+                    let alert = UIAlertController(title: Global.wrongProcess, message: afModel.message, preferredStyle: .alert)
+                    let retryActon = UIAlertAction(title: Global.retry_, style: .default) {_ in
                         self.dismiss(animated: false) {
                             NotificationCenter.default.removeObserver(self)
                         }
                     }
-                    let cancelAction = UIAlertAction(title: Dialog.cancel, style: .cancel) {_ in
+                    let cancelAction = UIAlertAction(title: Global.cancel, style: .cancel) {_ in
                         self.dismiss(animated: false) {
                             NotificationCenter.default.removeObserver(self)
                         }
@@ -119,13 +120,13 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
             case .failure(let error):
                 Utils.consoleLog("Network Response FAIL(ms_done.php)", error)
                 // 실패
-                let alert = UIAlertController(title: Title.wrongProcess, message: afModel.message, preferredStyle: .alert)
-                let retryActon = UIAlertAction(title: Dialog.retry_, style: .default) {_ in
+                let alert = UIAlertController(title: Global.wrongProcess, message: afModel.message, preferredStyle: .alert)
+                let retryActon = UIAlertAction(title: Global.retry_, style: .default) {_ in
                     self.dismiss(animated: false) {
                         NotificationCenter.default.removeObserver(self)
                     }
                 }
-                let cancelAction = UIAlertAction(title: Dialog.cancel, style: .cancel) {_ in
+                let cancelAction = UIAlertAction(title: Global.cancel, style: .cancel) {_ in
                     self.dismiss(animated: false) {
                         NotificationCenter.default.removeObserver(self)
                     }
@@ -184,8 +185,8 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         }
     }
     func showWrongAnswerPopup() {
-        let alert = UIAlertController(title: Title.wrongAnswer, message: Description.retryAnswer, preferredStyle: .alert)
-        let yes = UIAlertAction(title: Dialog.retry, style: .default) {_ in
+        let alert = UIAlertController(title: Global.wrongAnswer, message: Global.retryAnswer, preferredStyle: .alert)
+        let yes = UIAlertAction(title: Global.retry, style: .default) {_ in
             self.dismiss(animated: false) {
                 NotificationCenter.default.removeObserver(self)
             }
@@ -194,8 +195,8 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         self.present(alert, animated: false)
     }
     func showFailFinishPopup() {
-        let alert = UIAlertController(title: Title.failMission, message: Description.finishMission, preferredStyle: .alert)
-        let yes = UIAlertAction(title: Dialog.ok, style: .destructive) {_ in
+        let alert = UIAlertController(title: Global.failMission, message: Global.finishMission, preferredStyle: .alert)
+        let yes = UIAlertAction(title: Global.ok, style: .destructive) {_ in
             self.dismiss(animated: false) {
                 NotificationCenter.default.removeObserver(self)
             }
@@ -205,13 +206,13 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         self.present(alert, animated: true, completion: nil)
     }
     func showFailGoPreviousPopup() {
-        let alert = UIAlertController(title: Title.failMission, message: Description.failedMission, preferredStyle: .alert)
-        let yes = UIAlertAction(title: Dialog.retry_, style: .destructive) {_ in
+        let alert = UIAlertController(title: Global.failMission, message: Global.failedMission, preferredStyle: .alert)
+        let yes = UIAlertAction(title: Global.retry_, style: .destructive) {_ in
             self.dismiss(animated: false) {
                 NotificationCenter.default.removeObserver(self)
             }
         }
-        let no = UIAlertAction(title: Dialog.cancel, style: .cancel) {_ in
+        let no = UIAlertAction(title: Global.cancel, style: .cancel) {_ in
             self.baseBackAction()
         }
         alert.addAction(no)
@@ -394,10 +395,10 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
         let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: Dialog.cancel, style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: Global.cancel, style: .cancel) { _ in
             completionHandler(false)
         }
-        let okAction = UIAlertAction(title: Dialog.ok, style: .default) { _ in
+        let okAction = UIAlertAction(title: Global.ok, style: .default) { _ in
             completionHandler(true)
         }
         alertController.addAction(cancelAction)

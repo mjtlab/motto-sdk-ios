@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MottoFrameworks
 
 class TestVC: UIViewController {
     private let button = {
@@ -33,7 +34,7 @@ class TestVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         button.addAction(
             UIAction { [weak self] _ in
                 self?.tableView.scrollToBottom(completion: {
@@ -66,6 +67,7 @@ extension TestVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = dataSource[indexPath.row]
+        Global.AdCpcController
         return cell
     }
 }

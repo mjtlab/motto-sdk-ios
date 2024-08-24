@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import SnapKit
 import Then
+import MottoFrameworks
 
 class AdNPlaceAlarmSaveView: AdCrawlingView  {
     
@@ -70,7 +71,7 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
     }
     let bottomAlarmLabel = UILabel().then {
         $0.textColor = .black
-        $0.text = Description.alarmMent
+        $0.text = Global.alarmMent
         $0.font = .boldSystemFont(ofSize: 15)
         $0.numberOfLines = 0
         $0.textAlignment = .center
@@ -89,7 +90,7 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
     }
     let bottomSaveLabel = UILabel().then {
         $0.textColor = .black
-        $0.text = Description.alarmMent
+        $0.text = Global.alarmMent
         $0.font = .boldSystemFont(ofSize: 15)
         $0.numberOfLines = 0
         $0.textAlignment = .center
@@ -98,7 +99,7 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
     let bottomBlogLabel = UILabel().then {
         $0.isHidden = true
         $0.textColor = .black
-        $0.text = Description.choiceBlog
+        $0.text = Global.choiceBlog
         $0.font = .boldSystemFont(ofSize: 15)
         $0.numberOfLines = 0
         $0.textAlignment = .center
@@ -107,7 +108,7 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
     let bottomOKLabel = UIButton().then {
         $0.backgroundColor = .clear
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.setTitle(Words.confirmMission, for: .normal)
+        $0.setTitle(Global.confirmMission, for: .normal)
         $0.setTitleColor(.baseWhite, for: .normal)
         $0.setTitleColor(.baseWhite, for: .highlighted)
         $0.layer.cornerRadius = 10
@@ -236,7 +237,7 @@ class AdNPlaceAlarmSaveView: AdCrawlingView  {
             if productKey.count > 0, url.contains(productKey) {
                 return
             }
-            if url.contains(MLDefine.NaverMapUrl) {
+            if url.contains(Global.NaverMapUrl) {
                 return
             }
             

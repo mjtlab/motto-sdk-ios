@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 //import GoogleMobileAds
+import MottoFrameworks
 
 
 class AdNetworkViewController: BaseCampaignViewController {
@@ -112,7 +113,7 @@ class AdNetworkViewController: BaseCampaignViewController {
         // back action
         backButton.addTarget(self, action: #selector(baseBackAction), for: .touchUpInside)
         
-        let urlString = Domains.campaignURL + "main_ad_network.php?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
+        let urlString = Motto.currentDomain + Global.campaignURL + Global.AdNetworkController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
         Utils.consoleLog("urlString", urlString, true)
         loadWebView(wv: webView, url: urlString)
         

@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class AccountViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     
@@ -40,7 +41,7 @@ class AccountViewController: UIViewController, UIWebViewDelegate, WKNavigationDe
             $0.isHidden = true
             $0.backgroundColor = .white
             $0.titleLabel?.font = .systemFont(ofSize: 17)
-            $0.setTitle(" < \(Navigation.home)", for: .normal)
+            $0.setTitle(" < \(Global.home)", for: .normal)
             $0.setTitleColor(.black, for: .normal)
             $0.setTitleColor(.black, for: .highlighted)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -62,9 +63,9 @@ class AccountViewController: UIViewController, UIWebViewDelegate, WKNavigationDe
             make.height.equalTo(40)
         }
         backButton.addTarget(self, action: #selector(setBackAction), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< \(Navigation.home)", style: .plain, target: self, action: #selector(setBackAction))
-        Utils.consoleLog("Domains.loginURL + Motto.pubkey", Domains.loginURL + Motto.pubkey, true)
-        loadWebView(wv: WebView, url: Domains.loginURL + Motto.pubkey)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< \(Global.home)", style: .plain, target: self, action: #selector(setBackAction))
+        Utils.consoleLog("Domains.loginURL + Motto.pubkey", Global.loginURL + Motto.pubkey, true)
+        loadWebView(wv: WebView, url: Motto.currentDomain + Global.loginURL + Motto.pubkey)
     }
     
     @objc func setBackAction() {
@@ -102,7 +103,7 @@ class AccountViewController: UIViewController, UIWebViewDelegate, WKNavigationDe
             case "onLoginResult", "onJoinSuccess":
                 if res == "-1" { // 실패
                     let data = String(describing: messageBody["data"] ?? "")
-                    let alert = UIAlertController(title: messageString == "onLoginResult" ? Description.failLogin: Description.failJoin, message: data, preferredStyle: .alert)
+                    let alert = UIAlertController(title: messageString == "onLoginResult" ? Global.failLogin: Global.failJoin, message: data, preferredStyle: .alert)
                     let yes = UIAlertAction(title: "확인", style: .default) {_ in
                         print(data)
                     }
@@ -143,11 +144,11 @@ class AccountViewController: UIViewController, UIWebViewDelegate, WKNavigationDe
         guard let urlString = webView.url?.absoluteString else { return }
         
         if (urlString.contains("join")) {
-            self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = "< \(Navigation.userjoin)"
+            self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = "< \(Global.userjoin)"
         } else if (urlString.contains("pf.kakao.com")) {
-            self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = "< \(Navigation.contact)"
+            self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = "< \(Global.contact)"
         } else {
-            self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = "< \(Navigation.mottoInfo)"
+            self.navigationController?.navigationBar.topItem?.leftBarButtonItem?.title = "< \(Global.mottoInfo)"
         }
     }
     

@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import WebKit
+import MottoFrameworks
 
 class AdNSTrafficView: AdCrawlingView {
     
@@ -233,7 +234,7 @@ class AdNSTrafficView: AdCrawlingView {
             if productKey.count > 0 && url.contains(productKey) {
                 return
             }
-            if url.contains(MLDefine.NaverMapUrl) {
+            if url.contains(Global.NaverMapUrl) {
                 return
             }
             
@@ -559,13 +560,13 @@ class AdNSTrafficView: AdCrawlingView {
         case TrafficPopupState.COMPLETE:
             switchBottomView(isvisible: true)
             infoLabel30.isHidden = true
-            infoLabel31.text = Description.missionComplete
+            infoLabel31.text = Global.missionComplete
             completeButton.isEnabled = true
             completeButton.backgroundColor = .color_instagram_blue2
         case TrafficPopupState.PROGRESS:
             switchBottomView(isvisible: true)
             infoLabel30.isHidden = false
-            infoLabel31.text = Description.waitMission
+            infoLabel31.text = Global.waitMission
             completeButton.isEnabled = false
         }
     }

@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import WebKit
+import MottoFrameworks
 
 class AdNPTrafficView: AdCrawlingView {
     
@@ -109,7 +110,7 @@ class AdNPTrafficView: AdCrawlingView {
     let tipLabel = UILabel().then {
         $0.backgroundColor = .clear
         $0.textColor = .white
-        $0.text = Description.trafficTip
+        $0.text = Global.trafficTip
         $0.font = .systemFont(ofSize: 15)
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -265,7 +266,7 @@ class AdNPTrafficView: AdCrawlingView {
             if productKey.count > 0 && url.contains(productKey) {
                 return
             }
-            if url.contains(MLDefine.NaverMapUrl) {
+            if url.contains(Global.NaverMapUrl) {
                 return
             }
             
@@ -627,12 +628,12 @@ class AdNPTrafficView: AdCrawlingView {
         case TrafficPopupState.COMPLETE:
             switchBottomView(isvisible: true)
             infoLabel30.isHidden = true
-            infoLabel31.text = Description.missionComplete
+            infoLabel31.text = Global.missionComplete
             completeButton.isEnabled = true
         case TrafficPopupState.PROGRESS:
             switchBottomView(isvisible: true)
             infoLabel30.isHidden = false
-            infoLabel31.text = Description.waitMission
+            infoLabel31.text = Global.waitMission
             completeButton.isEnabled = false
         }
     }

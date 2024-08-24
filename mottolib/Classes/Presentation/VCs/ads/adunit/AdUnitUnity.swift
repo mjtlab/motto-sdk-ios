@@ -8,13 +8,14 @@
 import Foundation
 import AppTrackingTransparency
 import UnityAds
+import MottoFrameworks
 
 
 class AdUnitUnity: AdUnitBase {
     
     static let shared = AdUnitUnity()
     
-    var placementId: String? = "Rewarded_iOS"   // placement ID(IOS)
+    var placementId: String? = Global.UnityPlacementId   // placement ID(IOS)
     
     func initUnity() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -27,7 +28,7 @@ class AdUnitUnity: AdUnitBase {
                     case .authorized:
                         print("Unity authorized") // 허용됨
                         // UnityAds
-                        UnityAds.initialize("5609725", testMode: true)
+                        UnityAds.initialize(Global.UnityAdsInitializeKey, testMode: true)
                     @unknown default:
                         // 광고 진행 못함. alert
                         print("error") // 알려지지 않음

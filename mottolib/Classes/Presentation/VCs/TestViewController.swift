@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class TestViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
@@ -114,8 +115,8 @@ class TestViewController: UIViewController, UIWebViewDelegate, WKNavigationDeleg
         // back action
         backButton.addTarget(self, action: #selector(setBackAction), for: .touchUpInside)
         
-        loadWebView(wv: WebView, url: Domains.debugURL + "/pages/campaign/view/campaign_list_for_test.html?pk=" + Motto.pubkey + "&uid=\(Motto.uid)")
-        Utils.consoleLog(Domains.debugURL + "/pages/campaign/view/campaign_list_for_test.html?pk=" + Motto.pubkey + "&uid=\(Motto.uid)")
+        loadWebView(wv: WebView, url: Global.debugURL + Global.TestViewController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)")
+        Utils.consoleLog(Global.debugURL + "/pages/campaign/view/campaign_list_for_test.html?pk=" + Motto.pubkey + "&uid=\(Motto.uid)")
         
         
         

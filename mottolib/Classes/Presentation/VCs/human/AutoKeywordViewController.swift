@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MottoFrameworks
 
 class AutoKeywordViewController: BaseCampaignViewController {
     
@@ -103,7 +104,7 @@ class AutoKeywordViewController: BaseCampaignViewController {
         // back action
         backButton.addTarget(self, action: #selector(baseBackAction), for: .touchUpInside)
         
-        let urlString = Domains.campaignURL + "main_auto_keyword.php?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
+        let urlString = Motto.currentDomain + Global.campaignURL + Global.AutoKeywordController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
         Utils.consoleLog("urlString", urlString, true)
         loadWebView(wv: webView, url: urlString)
         

@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 //import GoogleMobileAds
 import AppTrackingTransparency
+import MottoFrameworks
 
 class AdUnitAdmob: AdUnitBase {
 
@@ -40,8 +41,8 @@ class AdUnitAdmob: AdUnitBase {
 //    override func loadAd(completion: @escaping(AdUnitResult) -> Void) {
 //        let request = GADRequest()
 //        
-////        GADRewardedAd.load(withAdUnitID: "ca-app-pub-7193526914088525/7586098869",   // 리워드 실 ID(IOS)
-//        GADRewardedAd.load(withAdUnitID: "ca-app-pub-3940256099942544/1712485313",   // 리워드 testID
+////        GADRewardedAd.load(withAdUnitID: Global.GADRewardReleaseId,   // 리워드 실 ID(IOS)
+//        GADRewardedAd.load(withAdUnitID: Global.GADRewardTestId,   // 리워드 testID
 //                               request: request) { [self] ad, error in
 //            if let error = error {
 //                Utils.consoleLog("Failed to load interstitial ad with error: \(error.localizedDescription)")
@@ -73,7 +74,7 @@ class AdUnitAdmob: AdUnitBase {
 ////    override func loadRewardedAd(completion: (AdUnitResult) -> Void) {
 ////        let request = GADRequest()
 ////        
-////        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/1712485313",   // 전면광고 testID
+////        GADInterstitialAd.load(withAdUnitID: Global.GADRewardTestId,   // 전면광고 testID
 ////                               request: request) { [self] ad, error in
 ////            if let error = error {
 ////                Utils.consoleLog("Failed to load interstitial ad with error: \(error.localizedDescription)")

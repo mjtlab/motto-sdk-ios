@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
 
    # s.public_header_files = 'Pod/Classes/**/*.h'
    s.static_framework = true
-   # s.vendored_frameworks = "mottolib.xcframework"
+   s.vendored_frameworks = "mottolib/MottoFrameworks.xcframework"
    
    s.frameworks = 'UIKit', 'WebKit', 'Foundation', 'CFNetwork'
    s.dependency 'SnapKit', '~> 5.6.0'

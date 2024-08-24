@@ -8,13 +8,14 @@
 import UIKit
 import VungleAdsSDK
 import AppTrackingTransparency
+import MottoFrameworks
 
 class AdUnitVungle: AdUnitBase {
     
     static let shared = AdUnitVungle()
     
     var rewardedAd: VungleRewarded?
-    var placementId: String? = "REWARDED_IOS-1467107"   // placement ID(IOS)
+    var placementId: String? = Global.VunglePlacementId   // placement ID(IOS)
     
     func initVungle() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -26,7 +27,7 @@ class AdUnitVungle: AdUnitBase {
                         print("no ad")
                     case .authorized:
                         print("Vungle authorized") // 허용됨
-                        VungleAds.initWithAppId("66627968506818ca1981f104") { error in  // App ID(IOS)
+                        VungleAds.initWithAppId(Global.VungleAdsInitWithAppId) { error in  // App ID(IOS)
                             if error != nil {
                                 print("Error initializing SDK")
                             } else {

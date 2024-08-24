@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
@@ -188,12 +189,12 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
 //    }
     
     func startCampaign() {
-        var urlString = Domains.missionURL
+        var urlString = Motto.currentDomain + Global.missionURL
         Motto.pathWay = "VC"
         
         // 캠페인 화면 변경
         switch Motto.adrole {
-        case MLDefine.CAMPAIGN_TYPE_AUTO_KEYWORD_NAVER:
+        case Global.CAMPAIGN_TYPE_AUTO_KEYWORD_NAVER:
             let viewcontroller = AutoKeywordViewController()
             viewcontroller.modalPresentationStyle = .overFullScreen
 //            self.present(viewcontroller, animated: false, completion: nil)
@@ -204,7 +205,7 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             }
             
             return
-        case MLDefine.CAMPAIGN_TYPE_SITE_TRAFFIC_NAVER:
+        case Global.CAMPAIGN_TYPE_SITE_TRAFFIC_NAVER:
             let viewcontroller = if Motto.jmethod < 3 {
                 SiteTrafficInappViewController()
             } else {
@@ -219,7 +220,7 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             }
             
             return
-        case MLDefine.CAMPAIGN_TYPE_AD_NETWORK:
+        case Global.CAMPAIGN_TYPE_AD_NETWORK:
 //            let viewcontroller = AdUnitAdmob()
             let viewcontroller = AdNetworkViewController()
             viewcontroller.modalPresentationStyle = .overFullScreen
@@ -231,7 +232,7 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             }
             
             return
-        case MLDefine.CAMPAIGN_TYPE_AD_CPC:
+        case Global.CAMPAIGN_TYPE_AD_CPC:
             let viewcontroller = AdCpcViewController()
             viewcontroller.modalPresentationStyle = .overFullScreen
 //            self.present(viewcontroller, animated: false, completion: nil)
@@ -242,7 +243,7 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             }
             
             return
-        case MLDefine.CAMPAIGN_TYPE_AD_CPV:
+        case Global.CAMPAIGN_TYPE_AD_CPV:
             let viewcontroller = AdCpvViewController()
             viewcontroller.modalPresentationStyle = .overFullScreen
 //            self.present(viewcontroller, animated: false, completion: nil)
@@ -253,7 +254,7 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             }
 //            
             return
-        case MLDefine.MT_InstaFollow,MLDefine.MT_InstaLike,MLDefine.MT_InstaSave,MLDefine.MT_InstaTraffic:
+        case Global.MT_InstaFollow,Global.MT_InstaLike,Global.MT_InstaSave,Global.MT_InstaTraffic:
             break
         default:
             break
@@ -272,22 +273,22 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             return
         } else {
             switch Motto.adrole {
-            case MLDefine.MT_NPlace:
+            case Global.MT_NPlace:
                 moveView = AdNPlaceAlarmSaveView()
 //                moveView = AdNPlaceView()
                 startIssueCheckTimer()
-            case MLDefine.MT_NBlog:
+            case Global.MT_NBlog:
                 moveView = AdNBlogView()
-            case MLDefine.MT_NPTraffic:
+            case Global.MT_NPTraffic:
                 moveView = AdNPTrafficView()
                 startPageCheckTimer()
-            case MLDefine.MT_NFavorProduct, MLDefine.MT_NFavorStore:
+            case Global.MT_NFavorProduct, Global.MT_NFavorStore:
                 moveView = AdNFavorView()
-            case MLDefine.MT_NSTraffic:
+            case Global.MT_NSTraffic:
                 moveView = AdNSTrafficView()
-            case MLDefine.MT_InstaFollow,MLDefine.MT_InstaLike,MLDefine.MT_InstaSave,MLDefine.MT_InstaTraffic:
+            case Global.MT_InstaFollow,Global.MT_InstaLike,Global.MT_InstaSave,Global.MT_InstaTraffic:
                 moveView = AdInstagramView()
-                urlString = Domains.instaURL
+                urlString = Motto.currentDomain + Global.instaURL
                 
                 startPageCheckTimer()
             default:

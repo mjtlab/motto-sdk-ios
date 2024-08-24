@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import Alamofire
 import SnapKit
+import MottoFrameworks
 
 final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, UICollectionViewDelegate, WKScriptMessageHandler {
 
@@ -81,7 +82,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     let midMottoOrderLabel = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.text = Words.basePlayOrder
+        $0.text = Global.basePlayOrder
         $0.font = UIFont.boldSystemFont(ofSize: 16)
         $0.sizeToFit()
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +94,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     let midInnerTitleLabel = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.text = Words.dDay
+        $0.text = Global.dDay
         $0.font = UIFont.boldSystemFont(ofSize: 12.5)
         $0.sizeToFit()
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +102,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     let midInnerTimeLabel = UILabel().then {
         $0.textColor = .blue
         $0.textAlignment = .center
-        $0.text = Words.dDayValue
+        $0.text = Global.dDayValue
         $0.font = UIFont.boldSystemFont(ofSize: 12.5)
         $0.sizeToFit()
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -187,7 +188,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         $0.isHidden = true
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.text = Words.loadCount
+        $0.text = Global.loadCount
         $0.font = UIFont.boldSystemFont(ofSize: 12)
         $0.sizeToFit()
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -203,7 +204,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     let midMottoCompleteLabel = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.text = Words.issueNumber
+        $0.text = Global.issueNumber
         $0.font = UIFont.boldSystemFont(ofSize: 14)
         $0.sizeToFit()
         $0.numberOfLines = 0
@@ -213,7 +214,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         $0.isHidden = true
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.text = Words.notGood
+        $0.text = Global.notGood
         $0.font = UIFont.systemFont(ofSize: 14)
         $0.sizeToFit()
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -510,12 +511,12 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         infoWebView.uiDelegate = self
         infoWebView.navigationDelegate = self
         
-        loadWebView(wv: infoWebView, url: Domains.infoURL + Motto.pubkey + "&uid=\(Motto.uid)")
+        loadWebView(wv: infoWebView, url: Motto.currentDomain + Global.infoURL + Motto.pubkey + "&uid=\(Motto.uid)")
         
         midSlotView_1.delegate = self
         midSlotView_1.dataSource = self
         midSlotView_1.isUserInteractionEnabled = false
-
+        
         initRouletteView()
         
         // 모또 start
@@ -527,9 +528,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         // 다시뽑기
         midRetryButton.addTarget(self, action: #selector(retryRoulette), for: .touchUpInside)
         
-        let parameters: Parameters = ["what": "info"]
+        let parameters: Parameters = ["what": Global.HomeInfo]
         AF.request(
-            Motto.currentDomain + Domains.mainPath + "ord_times.php",
+            Motto.currentDomain + Global.mainPath + Global.RequestOrderController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -543,8 +544,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                     Utils.consoleLog("Network Response data FAIL(ord_times.php)")
                     
                     guard let responseMsg = afModel.message else { return }
-                    let alert = UIAlertController(title: Title.notice, message: responseMsg, preferredStyle: .alert)
-                    let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                    let alert = UIAlertController(title: Global.notice, message: responseMsg, preferredStyle: .alert)
+                    let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                         UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                             exit(0)
@@ -592,8 +593,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             case .failure(let error):
                 Utils.consoleLog("Network Response FAIL(ord_times.php)", error)
                 
-                let alert = UIAlertController(title: Title.notice, message: Description.networkTrouble, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.notice, message: Global.networkTrouble, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                     UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         exit(0)
@@ -611,9 +612,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     
     func initNotice() {
         topNoticeTableView.rowHeight = 54
-        let parameters: Parameters = ["what": "notice"]
+        let parameters: Parameters = ["what": Global.HomeNotice]
         AF.request(
-            Motto.currentDomain + Domains.mainPath + "notice_list.php",
+            Motto.currentDomain + Global.mainPath + Global.RequestNoticeController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -627,8 +628,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                     Utils.consoleLog("Network Response data FAIL(notice_list.php)")
                     
                     guard let responseMsg = afModel.message else { return }
-                    let alert = UIAlertController(title: Title.notice, message: responseMsg, preferredStyle: .alert)
-                    let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                    let alert = UIAlertController(title: Global.notice, message: responseMsg, preferredStyle: .alert)
+                    let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                         UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                             exit(0)
@@ -657,8 +658,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             case .failure(let error):
                 Utils.consoleLog("Network Response FAIL(notice_list.php)", error)
                 
-                let alert = UIAlertController(title: Title.notice, message: Description.networkTrouble, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.notice, message: Global.networkTrouble, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                     UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         exit(0)
@@ -743,8 +744,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
 //        isViewDid = false
         
         if Motto.uid == "" {
-            let alert = UIAlertController(title: Title.serviceInfo, message: Description.needLoginShort, preferredStyle: .alert)
-            let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+            let alert = UIAlertController(title: Global.serviceInfo, message: Global.needLoginShort, preferredStyle: .alert)
+            let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                 // 로그인
 //                self.isViewDid = true
 //                self.midStartButton.isEnabled = true
@@ -758,8 +759,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             self.present(alert, animated: true, completion: nil)
         } else {
             if isBreakMottoTime() {
-                let alert = UIAlertController(title: Title.breakTime, message: Description.breakMotto, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.breakTime, message: Global.breakMotto, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
 //                    self.isViewDid = true
                     self.dismiss(animated: false)
                 }
@@ -769,8 +770,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                 scrollView.setContentOffset(CGPoint(x: 0, y: 70), animated: true)
                 
                 if Motto.myTicket <= 0 {
-                    let alert = UIAlertController(title: Title.serviceInfo, message: Description.needTicket, preferredStyle: .alert)
-                    let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                    let alert = UIAlertController(title: Global.serviceInfo, message: Global.needTicket, preferredStyle: .alert)
+                    let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
 //                        self.isViewDid = true
                         self.dismiss(animated: false)
                     }
@@ -808,8 +809,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         }
         
         if Motto.uid == "" {
-            let alert = UIAlertController(title: Title.serviceInfo, message: Description.needLoginShort, preferredStyle: .alert)
-            let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+            let alert = UIAlertController(title: Global.serviceInfo, message: Global.needLoginShort, preferredStyle: .alert)
+            let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                 // 로그인
                 let viewcontroller = AccountViewController()
                 viewcontroller.dataFromVC = "SELF"
@@ -820,8 +821,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             self.present(alert, animated: true, completion: nil)
         } else {
             if isBreakTime() {
-                let alert = UIAlertController(title: Title.breakTime, message: Description.breakCharge, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.breakTime, message: Global.breakCharge, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                     self.dismiss(animated: false)
                 }
                 alert.addAction(yes)
@@ -987,9 +988,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     
     func loadMyTicket(isStartRoulette: Bool) {
         if Motto.uid != "" {
-            let parameters: Parameters = ["what": "my_ticket", "pk": Motto.pubkey, "uid": Motto.uid]
+            let parameters: Parameters = ["what": Global.LoadTicket, "pk": Motto.pubkey, "uid": Motto.uid]
             AF.request(
-                Motto.currentDomain + Domains.mainPath + "my_ticket_v2.php",
+                Motto.currentDomain + Global.mainPath + Global.RequestTicketController,
                 method: .post,
                 parameters: parameters)
             .validate(statusCode: 200..<500)
@@ -1028,9 +1029,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         Utils.consoleLog("uid", Motto.uid, true)
                          
         if Motto.uid != "" && Motto.pubkey != "" {
-            let parameters: Parameters = ["what": "join", "pk": Motto.pubkey, "uid": Motto.uid]
+            let parameters: Parameters = ["what": Global.Join, "pk": Motto.pubkey, "uid": Motto.uid]
             AF.request(
-                Motto.currentDomain + Domains.mainPath + "joinus.php",
+                Motto.currentDomain + Global.mainPath + Global.RequestJoinController,
                 method: .post,
                 parameters: parameters)
             .validate(statusCode: 200..<500)
@@ -1058,9 +1059,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     }
     func checkAttend() {
         if Motto.uid != "" {
-            let parameters: Parameters = ["what": "attend", "pk": Motto.pubkey, "uid": Motto.uid]
+            let parameters: Parameters = ["what": Global.Attend, "pk": Motto.pubkey, "uid": Motto.uid]
             AF.request(
-                Motto.currentDomain + Domains.mainPath + "attends.php",
+                Motto.currentDomain + Global.mainPath + Global.RequestAttendController,
                 method: .post,
                 parameters: parameters)
             .validate(statusCode: 200..<500)
@@ -1075,8 +1076,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                     } else {
                         guard let responseData = afModel.data else { return }
                         if responseData != "0" {
-                            let alert = UIAlertController(title: Title.attend, message: "[이용권 \(responseData)장 \n지급되었습니다.]", preferredStyle: .alert)
-                            let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                            let alert = UIAlertController(title: Global.attend, message: "[이용권 \(responseData)장 \n지급되었습니다.]", preferredStyle: .alert)
+                            let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                                 self.dismiss(animated: false)
                             }
                             alert.addAction(yes)
@@ -1092,9 +1093,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         }
     }
     func requestJoin() {
-        let parameters: Parameters = ["what": "join", "pk": Motto.pubkey, "uid": Motto.uid, "hp": "010-0000-0000"]
+        let parameters: Parameters = ["what": Global.Join, "pk": Motto.pubkey, "uid": Motto.uid, "hp": "010-0000-0000"]
         AF.request(
-            Motto.currentDomain + Domains.mainPath + "joinus.php",
+            Motto.currentDomain + Global.mainPath + Global.RequestJoinController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -1120,9 +1121,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     func requestMission() {
         // 이 함수를 호출하는 조건을 명확히 하는 것이 우선이고.
         // 그 후에 해당 함수 호출
-        let parameters: Parameters = ["what": "rand_camp", "pk": Motto.pubkey, "uid": Motto.uid]
+        let parameters: Parameters = ["what": Global.MissionRequest, "pk": Motto.pubkey, "uid": Motto.uid]
         AF.request(
-            Motto.currentDomain + Domains.mainPath + "ms_getone.php",
+            Motto.currentDomain + Global.mainPath + Global.MissionRequestController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -1156,8 +1157,8 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             case .failure(let error):
                 Utils.consoleLog("Network Response FAIL(joinus.php)", error)
                 
-                let alert = UIAlertController(title: Title.notice, message: Description.networkError, preferredStyle: .alert)
-                let yes = UIAlertAction(title: Dialog.ok, style: .default) {_ in
+                let alert = UIAlertController(title: Global.notice, message: Global.networkError, preferredStyle: .alert)
+                let yes = UIAlertAction(title: Global.ok, style: .default) {_ in
                     self.dismiss(animated: false)
                 }
                 alert.addAction(yes)
@@ -1171,10 +1172,10 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         midConfirmButton.isEnabled = false
         
         let sortedSelectedNumbers = selectedNumber.sorted()
-        let parameters: Parameters = ["what": "put_numbers", "pk": Motto.pubkey, "uid": Motto.uid, "num1": sortedSelectedNumbers[0], "num2": sortedSelectedNumbers[1], "num3": sortedSelectedNumbers[2], "num4": sortedSelectedNumbers[3], "num5": sortedSelectedNumbers[4], "num6": sortedSelectedNumbers[5]]
+        let parameters: Parameters = ["what": Global.ConfirmRoulette, "pk": Motto.pubkey, "uid": Motto.uid, "num1": sortedSelectedNumbers[0], "num2": sortedSelectedNumbers[1], "num3": sortedSelectedNumbers[2], "num4": sortedSelectedNumbers[3], "num5": sortedSelectedNumbers[4], "num6": sortedSelectedNumbers[5]]
             
         AF.request(
-            Motto.currentDomain + Domains.mainPath + "put_numbers_v2.php",
+            Motto.currentDomain + Global.mainPath + Global.ConfirmRouletteController,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)

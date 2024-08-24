@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import MottoFrameworks
 
 class PrizeNumberViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
@@ -36,8 +37,8 @@ class PrizeNumberViewController: UIViewController, UIWebViewDelegate, WKNavigati
         WebView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalToSuperview()
         }
-        Utils.consoleLog("ssss", Domains.prizeNumberURL + Motto.pubkey + "&uid=\(Motto.uid)", true)
-        loadWebView(wv: WebView, url: Domains.prizeNumberURL + Motto.pubkey + "&uid=\(Motto.uid)")
+        Utils.consoleLog("ssss", Global.prizeNumberURL + Motto.pubkey + "&uid=\(Motto.uid)", true)
+        loadWebView(wv: WebView, url: Motto.currentDomain + Global.prizeNumberURL + Motto.pubkey + "&uid=\(Motto.uid)")
     }
     
     private func loadWebView(wv webView: WKWebView, url moveUrl: String) {
@@ -48,7 +49,7 @@ class PrizeNumberViewController: UIViewController, UIWebViewDelegate, WKNavigati
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        Utils.consoleLog(message.name, Domains.prizeNumberURL + Motto.pubkey + "&uid=\(Motto.uid)", true)
+        Utils.consoleLog(message.name, Global.prizeNumberURL + Motto.pubkey + "&uid=\(Motto.uid)", true)
         if message.name == "MLJS", let messageBody = message.body as? [String: Any] {
             let messageString = String(describing: messageBody["message"] ?? "")
             

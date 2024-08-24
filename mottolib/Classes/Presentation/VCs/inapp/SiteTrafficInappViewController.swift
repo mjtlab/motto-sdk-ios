@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MottoFrameworks
 
 class SiteTrafficInappViewController: BaseCampaignViewController {
     
@@ -157,7 +158,7 @@ class SiteTrafficInappViewController: BaseCampaignViewController {
     let tipLabel = UILabel().then {
         $0.backgroundColor = .clear
         $0.textColor = .white
-        $0.text = Description.trafficTip
+        $0.text = Global.trafficTip
         $0.font = .systemFont(ofSize: 15)
         $0.numberOfLines = 0
         $0.sizeToFit()
@@ -297,7 +298,7 @@ class SiteTrafficInappViewController: BaseCampaignViewController {
         backButton.addTarget(self, action: #selector(baseBackAction), for: .touchUpInside)
         completeButton.addTarget(self, action: #selector(sendOkRequest), for: .touchUpInside)
         
-        let urlString = Domains.campaignURL + "main_site_traffic_inapp.php?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
+        let urlString = Motto.currentDomain + Global.campaignURL + Global.SiteTrafficInappController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
         Utils.consoleLog("urlString", urlString, true)
         loadWebView(wv: webView, url: urlString)
     }
@@ -346,22 +347,22 @@ class SiteTrafficInappViewController: BaseCampaignViewController {
         switch type {
         case GuideType.SEARCH:
             tipView.isHidden = false
-            tipLabel.text = Description.autoKeyword
+            tipLabel.text = Global.autoKeyword
             infoLabel_1.text = ""
-            infoLabel_2.text = Description.autoKeyword1
-            infoLabel_3.text = Description.autoKeyword2
+            infoLabel_2.text = Global.autoKeyword1
+            infoLabel_3.text = Global.autoKeyword2
             addGuidePopup(type: 1)
         case GuideType.MORE_BUTTON:
             tipView.isHidden = true
-            infoLabel_1.text = Description.more
-            infoLabel_2.text = Description.more1
-            infoLabel_3.text = Description.more2
+            infoLabel_1.text = Global.more
+            infoLabel_2.text = Global.more1
+            infoLabel_3.text = Global.more2
             addGuidePopup(type: 1)
         case GuideType.TARGET:
             tipView.isHidden = true
-            infoLabel_1.text = Description.target
-            infoLabel_2.text = Description.target1
-            infoLabel_3.text = Description.target2
+            infoLabel_1.text = Global.target
+            infoLabel_2.text = Global.target1
+            infoLabel_3.text = Global.target2
             addGuidePopup(type: 1)
         case GuideType.TRAFFIC:
             startTrafficTimer()
