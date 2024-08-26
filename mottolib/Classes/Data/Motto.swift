@@ -15,7 +15,7 @@ public class Motto {
     private init() {}
     
     public static var uid: String = ""
-    static var adid: String = ""
+    static static var adid: String = ""
     public static var pubkey: String = "motto"
     static var ticket: Int = 0
     static var myTicket: Int = 0
