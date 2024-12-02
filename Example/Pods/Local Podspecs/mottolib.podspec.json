@@ -1,6 +1,6 @@
 {
   "name": "mottolib",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "summary": "Motto SDK-iOS",
   "swift_versions": "5.0",
   "description": "Motto SDK - iOS",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/mjtlab/motto-sdk-ios.git",
-    "tag": "0.0.6"
+    "tag": "0.0.7"
   },
   "platforms": {
     "ios": "15.0"
@@ -27,6 +27,7 @@
   },
   "resources": "mottolib/Assets/*.png",
   "static_framework": true,
+  "vendored_frameworks": "mottolib/MottoFrameworks.xcframework",
   "frameworks": [
     "UIKit",
     "WebKit",

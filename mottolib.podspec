@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
    s.dependency 'SnapKit', '~> 5.6.0'
    s.dependency 'Then'
    s.dependency 'Alamofire'
- #  s.dependency 'Google-Mobile-Ads-SDK', '<= 11.5.0'
+#   s.dependency 'Google-Mobile-Ads-SDK', '<= 11.5.0'
    s.dependency 'VungleAds'
    s.dependency 'UnityAds'
 end

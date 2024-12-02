@@ -1,0 +1,11 @@
+framework module MottoFrameworks {
+  umbrella header "MottoFrameworks.h"
+  export *
+
+  module * { export * }
+}
+
+module MottoFrameworks.Swift {
+  header "MottoFrameworks-Swift.h"
+  requires objc
+}
