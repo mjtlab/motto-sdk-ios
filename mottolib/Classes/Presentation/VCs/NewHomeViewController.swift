@@ -1122,8 +1122,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         // 이 함수를 호출하는 조건을 명확히 하는 것이 우선이고.
         // 그 후에 해당 함수 호출
         let parameters: Parameters = ["what": Global.MissionRequest, "pk": Motto.pubkey, "uid": Motto.uid]
+        let path: String = Motto.currentDomain + Global.mainPath + "ms_getone_new.php"
         AF.request(
-            Motto.currentDomain + Global.mainPath + Global.MissionRequestController,
+            path,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
