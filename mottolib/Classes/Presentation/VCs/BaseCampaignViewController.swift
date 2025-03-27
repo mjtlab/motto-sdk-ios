@@ -341,7 +341,8 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
                 }
             case "onStartMission":
                 Utils.consoleLog("onStartMission", true)
-                startMission(startUrl: startUrl.removingPercentEncoding ?? "")
+                let url = startUrl.contains("https") ? startUrl : "https://\(startUrl)"
+                startMission(startUrl: url.removingPercentEncoding ?? "")
             case "onSetScripts":
                 Utils.consoleLog("onSetScripts script1", script1, true)
                 Utils.consoleLog("onSetScripts script2", script2, true)
