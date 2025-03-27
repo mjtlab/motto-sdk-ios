@@ -46,11 +46,20 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let source = """
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        """
+
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         let contentController = WKUserContentController()
         let config = WKWebViewConfiguration()
         
         contentController.add(self, name: "CampaignInterfaceIos")
         contentController.add(self, name: "AppInterfaceIos")
+        contentController.addUserScript(script)
         config.preferences = WKPreferences()
         config.defaultWebpagePreferences.allowsContentJavaScript = true
         config.allowsInlineMediaPlayback = true
