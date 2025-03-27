@@ -36,7 +36,7 @@ public class Motto {
     static var routeString = "DEBUG"
     static var currentDomain = Global.debugURL
     
-    static var humanCampaignUrl = "https://mcodi.mocation.co.kr/motto/"
+    static var humanCampaignUrl = "https://mcodi.mocation.co.kr"
     
     /* 6개 번호 추첨 */
     static func startSlotNumber() -> [Int] {
@@ -92,7 +92,8 @@ public class Motto {
         
         if routeString.contains("DEBUG") {
             Motto.currentDomain = Global.debugURL
-            Motto.humanCampaignUrl = "http://106.248.241.115/mocation/motto/"
+            Motto.humanCampaignUrl = "http://106.248.241.115/mocation"
+            
         } else if routeString.contains("RELEASE") {
             Motto.currentDomain = Global.releaseURL
         }

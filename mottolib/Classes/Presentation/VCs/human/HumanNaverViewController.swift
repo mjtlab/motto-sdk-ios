@@ -104,7 +104,7 @@ class HumanNaverViewController: BaseCampaignViewController {
         // back action
         backButton.addTarget(self, action: #selector(baseBackAction), for: .touchUpInside)
 
-        let urlString = Motto.humanCampaignUrl + "?pub_key=" + Motto.pubkey + "&user_id=" + Motto.uid + "&campaign_code=" + Motto.pcode + "&campaign_type=" + "\(Motto.adrole)"
+        let urlString = Motto.humanCampaignUrl + "/motto" + "?pub_key=" + Motto.pubkey + "&user_id=" + Motto.uid + "&campaign_code=" + Motto.pcode + "&campaign_type=" + "\(Motto.adrole)"
         Utils.consoleLog("휴먼 캠페인 URL", urlString, true)
         
         loadWebView(wv: webView, url: urlString)
