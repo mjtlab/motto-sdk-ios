@@ -13,7 +13,7 @@ import MottoFrameworks
 class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
     // MARK: - property
-    var requestSend: Bool = false
+    
     // executionType = jmethod, campaignType = jtype
     var operationType: String = ""      //ctype: inapp A, B, human C, D, E
     var campaignAnswer: String = ""
@@ -81,7 +81,6 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         .validate(statusCode: 200..<500)
         .responseDecodable(of: DefaultResponseModel.self) { response in
             guard let afModel = response.value else { return }
-            self.requestSend = false
             LoadingIndicator.hideLoading()
             
             switch response.result {
@@ -241,8 +240,8 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         if (message.name == "AppInterfaceIos" || message.name == "CampaignInterfaceIos"), let messageBody = message.body as? [String: Any] {
             let messageString = String(describing: messageBody["message"] ?? "")
             let startUrl = String(describing: messageBody["startUrl"] ?? "")
-            let args = String(describing: messageBody["args"] ?? "")
-            let urls = String(describing: messageBody["urls"] ?? "")
+//            let args = String(describing: messageBody["args"] ?? "")
+//            let urls = String(describing: messageBody["urls"] ?? "")
             let answer = String(describing: messageBody["answer"] ?? "")
             let browserType = String(describing: messageBody["browserType"] ?? "")
             let openAnswerPage = String(describing: messageBody["openAnswerPage"] ?? "0")
@@ -385,11 +384,11 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         }
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        guard let url: String = webView.url?.absoluteString else { return }
+        guard let _: String = webView.url?.absoluteString else { return }
 
     }
     func webPageFinished(url: String, diff: Int) {
-        guard let url: String = webView.url?.absoluteString else { return }
+        guard let _: String = webView.url?.absoluteString else { return }
     }
     
     

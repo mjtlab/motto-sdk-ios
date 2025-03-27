@@ -32,7 +32,7 @@ class Utils {
 //    }
     
     public static func consoleLog(_ tag: String, _ object: Any = "nil", _ flag: Bool = false, filename: String = #file, _ line: Int = #line, _ funcname: String = #function) {
-        if !flag { return }
+//        if !flag { return }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss:SSS"
         let classname = filename.components(separatedBy: "/")

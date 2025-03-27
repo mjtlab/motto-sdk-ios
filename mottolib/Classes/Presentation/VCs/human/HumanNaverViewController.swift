@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MottoFrameworks
+//import MottoFrameworks
 
 class HumanNaverViewController: BaseCampaignViewController {
     
