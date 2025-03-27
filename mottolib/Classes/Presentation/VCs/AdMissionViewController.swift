@@ -188,22 +188,24 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
 //        }
 //    }
     
+    private func startHuman() {
+        let viewcontroller = HumanNaverViewController()
+        viewcontroller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        guard let pvc = self.presentingViewController else { return }
+        self.dismiss(animated: false) {
+            pvc.present(viewcontroller, animated: false, completion: nil)
+            NotificationCenter.default.removeObserver(self)
+        }
+    }
+    
     func startCampaign() {
         var urlString = Motto.currentDomain + Global.missionURL
         Motto.pathWay = "VC"
         
         // 캠페인 화면 변경
         switch Motto.adrole {
-        case Global.CAMPAIGN_TYPE_AUTO_KEYWORD_NAVER:
-            let viewcontroller = AutoKeywordViewController()
-            viewcontroller.modalPresentationStyle = .overFullScreen
-//            self.present(viewcontroller, animated: false, completion: nil)
-            guard let pvc = self.presentingViewController else { return }
-            self.dismiss(animated: false) {
-                pvc.present(viewcontroller, animated: false, completion: nil)
-                NotificationCenter.default.removeObserver(self)
-            }
-            
+        case Global.CAMPAIGN_TYPE_AD_CPC, Global.CAMPAIGN_TYPE_AUTO_KEYWORD_NAVER:
+            startHuman()
             return
         case Global.CAMPAIGN_TYPE_SITE_TRAFFIC_NAVER:
             let viewcontroller = if Motto.jmethod < 3 {
@@ -232,17 +234,6 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
             }
             
             return
-        case Global.CAMPAIGN_TYPE_AD_CPC:
-            let viewcontroller = AdCpcViewController()
-            viewcontroller.modalPresentationStyle = .overFullScreen
-//            self.present(viewcontroller, animated: false, completion: nil)
-            guard let pvc = self.presentingViewController else { return }
-            self.dismiss(animated: false) {
-                pvc.present(viewcontroller, animated: false, completion: nil)
-                NotificationCenter.default.removeObserver(self)
-            }
-            
-            return
         case Global.CAMPAIGN_TYPE_AD_CPV:
             let viewcontroller = AdCpvViewController()
             viewcontroller.modalPresentationStyle = .overFullScreen
@@ -261,15 +252,7 @@ class AdMissionViewController: UIViewController, WKUIDelegate, WKNavigationDeleg
         }
         
         if Motto.jmethod > 2 {
-            let viewcontroller = HumanNaverViewController()
-            viewcontroller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-//            self.present(viewcontroller, animated: false, completion: nil)
-            guard let pvc = self.presentingViewController else { return }
-            self.dismiss(animated: false) {
-                pvc.present(viewcontroller, animated: false, completion: nil)
-                NotificationCenter.default.removeObserver(self)
-            }
-            
+            startHuman()
             return
         } else {
             switch Motto.adrole {
