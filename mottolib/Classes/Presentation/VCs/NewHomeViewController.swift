@@ -803,10 +803,10 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
 //        self.midRetryButton.isEnabled = true
 //        self.midConfirmButton.isEnabled = true
         
-        if Motto.routeString.contains("DEBUG") {
-            goMission()
-            return
-        }
+//        if Motto.routeString.contains("DEBUG") {
+//            goMission()
+//            return
+//        }
         
         if Motto.uid == "" {
             let alert = UIAlertController(title: Global.serviceInfo, message: Global.needLoginShort, preferredStyle: .alert)
@@ -930,16 +930,16 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
     }
                          
     @objc func goMission() {
-        if Motto.routeString.contains("DEBUG") {
-            let viewcontroller = TestViewController()
-            viewcontroller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-            self.present(viewcontroller, animated: false, completion: nil)
-        } else {
+//        if Motto.routeString.contains("DEBUG") {
+//            let viewcontroller = TestViewController()
+//            viewcontroller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+//            self.present(viewcontroller, animated: false, completion: nil)
+//        } else {
             let viewcontroller = AdMissionViewController()
             viewcontroller.ms_data = missionData
             viewcontroller.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
             self.present(viewcontroller, animated: true, completion: nil)
-        }
+//        }
     }
                          
     @objc func successFinish(_ notification: Notification) {
@@ -1122,8 +1122,9 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
         // 이 함수를 호출하는 조건을 명확히 하는 것이 우선이고.
         // 그 후에 해당 함수 호출
         let parameters: Parameters = ["what": Global.MissionRequest, "pk": Motto.pubkey, "uid": Motto.uid]
+        let path: String = Motto.currentDomain + Global.mainPath + "ms_getone_new.php"
         AF.request(
-            Motto.currentDomain + Global.mainPath + Global.MissionRequestController,
+            path,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
@@ -1131,10 +1132,10 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
             guard let afModel = response.value else { return }
             switch response.result {
             case .success(let value):
-                Utils.consoleLog("Network Response SUCCESS(ms_getone.php)", value)
+                Utils.consoleLog("Network Response SUCCESS(\(path)", value)
                 
                 if afModel.result == -1 {
-                    Utils.consoleLog("Network Response data FAIL(ms_getone.php)")
+                    Utils.consoleLog("Network Response data FAIL(\(path)")
                     
                     // 다이얼로그뷰 UI 변경처리. noti를 보낸다.
                     NotificationCenter.default.post(name: .mission, object: 0)
@@ -1155,7 +1156,7 @@ final class NewHomeViewController: UIViewController, UIWebViewDelegate, WKNaviga
                     }
                 }
             case .failure(let error):
-                Utils.consoleLog("Network Response FAIL(joinus.php)", error)
+                Utils.consoleLog("Network Response FAIL(\(path)", error)
                 
                 let alert = UIAlertController(title: Global.notice, message: Global.networkError, preferredStyle: .alert)
                 let yes = UIAlertAction(title: Global.ok, style: .default) {_ in

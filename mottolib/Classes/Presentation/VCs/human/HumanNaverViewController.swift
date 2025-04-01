@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MottoFrameworks
+//import MottoFrameworks
 
 class HumanNaverViewController: BaseCampaignViewController {
     
@@ -103,11 +103,10 @@ class HumanNaverViewController: BaseCampaignViewController {
         titleLabel.text = Motto.store
         // back action
         backButton.addTarget(self, action: #selector(baseBackAction), for: .touchUpInside)
+
+        let urlString = Motto.humanCampaignUrl + "/motto" + "?pub_key=" + Motto.pubkey + "&user_id=" + Motto.uid + "&campaign_code=" + Motto.pcode + "&campaign_type=" + "\(Motto.adrole)"
+        Utils.consoleLog("휴먼 캠페인 URL", urlString, true)
         
-        let urlString = Motto.currentDomain + Global.campaignURL + Global.HumanNaverController + "?pk=" + Motto.pubkey + "&uid=\(Motto.uid)&pcode=\(String(describing: Motto.pcode))&campaignType=\(String(describing: Motto.adrole))&executionType=\(String(describing: Motto.jmethod))"
-        Utils.consoleLog("urlString", urlString, true)
-        
-//        loadWebView(wv: webView, url: "https://m.naver.com")
         loadWebView(wv: webView, url: urlString)
         
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification,

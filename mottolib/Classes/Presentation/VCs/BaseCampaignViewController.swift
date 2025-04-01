@@ -13,7 +13,7 @@ import MottoFrameworks
 class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 
     // MARK: - property
-    var requestSend: Bool = false
+    
     // executionType = jmethod, campaignType = jtype
     var operationType: String = ""      //ctype: inapp A, B, human C, D, E
     var campaignAnswer: String = ""
@@ -46,11 +46,20 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let source = """
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        """
+
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
         let contentController = WKUserContentController()
         let config = WKWebViewConfiguration()
         
         contentController.add(self, name: "CampaignInterfaceIos")
         contentController.add(self, name: "AppInterfaceIos")
+        contentController.addUserScript(script)
         config.preferences = WKPreferences()
         config.defaultWebpagePreferences.allowsContentJavaScript = true
         config.allowsInlineMediaPlayback = true
@@ -74,14 +83,16 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     
     @objc func sendOkRequest() {
         let parameters = ["what": Global.MissionComplete, "pk": Motto.pubkey, "uid": Motto.uid, "pcode": Motto.pcode, "jmethod": Motto.jmethod, "adid": Motto.adid, "ticket": Motto.ticket] as [String : Any]
+        let path = Motto.currentDomain + Global.msPath + Global.MissionCompleteController
         AF.request(
-            Motto.currentDomain + Global.msPath + Global.MissionCompleteController,
+            path,
             method: .post,
             parameters: parameters)
         .validate(statusCode: 200..<500)
-        .responseDecodable(of: DefaultResponseModel.self) { response in
+        .responseDecodable(of: DefaultResponseModel.self) { [weak self] response in
+            guard let self else { return }
             guard let afModel = response.value else { return }
-            self.requestSend = false
+            
             LoadingIndicator.hideLoading()
             
             switch response.result {
@@ -107,15 +118,7 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
                     self.present(alert, animated: false)
                 } else {
                     guard let responseData = afModel.data else { return }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        // 이전 VC로 결과 전달. 결과 데이터가 변경된듯.
-                        Utils.consoleLog("Network responseData", responseData)
-                        
-                        self.dismiss(animated: false) {
-                            NotificationCenter.default.post(name: .successfinish, object: responseData)
-                            NotificationCenter.default.removeObserver(self)
-                        }
-                    }
+                    self.successfinish(responseData: responseData)
                 }
             case .failure(let error):
                 Utils.consoleLog("Network Response FAIL(ms_done.php)", error)
@@ -235,14 +238,19 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     func onPageStarted(url: String) { }
     func onPageFinished(url: String) { }
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        Utils.consoleLog("message", message.name, true)
-        Utils.consoleLog("message.body", message.body, true)
-        if (message.name == "AppInterfaceIos" || message.name == "CampaignInterfaceIos"), let messageBody = message.body as? [String: Any] {
+
+    
+    func userContentController(
+        _ userContentController: WKUserContentController,
+        didReceive message: WKScriptMessage
+    ) {
+        if (message.name == "AppInterfaceIos" || message.name == "CampaignInterfaceIos"),
+           let messageBody = message.body as? [String: Any]
+        {
             let messageString = String(describing: messageBody["message"] ?? "")
             let startUrl = String(describing: messageBody["startUrl"] ?? "")
-            let args = String(describing: messageBody["args"] ?? "")
-            let urls = String(describing: messageBody["urls"] ?? "")
+//            let args = String(describing: messageBody["args"] ?? "")
+//            let urls = String(describing: messageBody["urls"] ?? "")
             let answer = String(describing: messageBody["answer"] ?? "")
             let browserType = String(describing: messageBody["browserType"] ?? "")
             let openAnswerPage = String(describing: messageBody["openAnswerPage"] ?? "0")
@@ -266,7 +274,13 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
             let image = String(describing: messageBody["image"] ?? "0")
             let time = String(describing: messageBody["time"] ?? "0")
             
+            
+            // NEW
+            let data = String(describing: messageBody["data"] ?? "")
+            
             switch messageString {
+            case "onMissionSuccess":
+                self.successfinish(responseData: data)
             case "onSetCampaignData":
 //                Utils.consoleLog("onSetCampaignData answer", answer, true)
 //                Utils.consoleLog("onSetCampaignData browserType", browserType, true)
@@ -333,7 +347,8 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
                 }
             case "onStartMission":
                 Utils.consoleLog("onStartMission", true)
-                startMission(startUrl: startUrl.removingPercentEncoding ?? "")
+                let url = startUrl.contains("https") ? startUrl : "https://\(startUrl)"
+                startMission(startUrl: url.removingPercentEncoding ?? "")
             case "onSetScripts":
                 Utils.consoleLog("onSetScripts script1", script1, true)
                 Utils.consoleLog("onSetScripts script2", script2, true)
@@ -385,11 +400,11 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
         }
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        guard let url: String = webView.url?.absoluteString else { return }
+        guard let _: String = webView.url?.absoluteString else { return }
 
     }
     func webPageFinished(url: String, diff: Int) {
-        guard let url: String = webView.url?.absoluteString else { return }
+        guard let _: String = webView.url?.absoluteString else { return }
     }
     
     
@@ -449,3 +464,15 @@ class BaseCampaignViewController: UIViewController, UIWebViewDelegate, WKNavigat
     }
 }
 
+extension BaseCampaignViewController {
+    private func successfinish(responseData: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            // 이전 VC로 결과 전달. 결과 데이터가 변경된듯.
+            Utils.consoleLog("Network responseData", responseData)
+            self.dismiss(animated: false) {
+                NotificationCenter.default.post(name: .successfinish, object: responseData)
+                NotificationCenter.default.removeObserver(self)
+            }
+        }
+    }
+}
