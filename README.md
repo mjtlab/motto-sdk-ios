@@ -8,7 +8,7 @@
 
 # Guide to Installing the Motto SDK on IOS
 * This document contains some initial settings and sources for installing Motto SDK.
-* The latest version of Motto SDK is 0.0.6. Please always use the latest version.
+* The latest version of Motto SDK is 0.1.0. Please always use the latest version.
 * Please refer to the sample project for the full source.
 
 ## Xcode setting
