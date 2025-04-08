@@ -108,7 +108,7 @@ class NewHallOfFameViewController: UIViewController, UIWebViewDelegate, WKNaviga
         
         frameView.addSubview(WebView)
         
-        loadWebView(wv: WebView, url: Global.hallURL)
+        loadWebView(wv: WebView, url: Motto.hallURL)
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
