@@ -37,6 +37,7 @@ public class Motto {
     static var currentDomain = Global.debugURL
     
     static var humanCampaignUrl = "https://mcodi.mocation.co.kr"
+    static let hallURL = "https://m.blog.naver.com/PostList.naver?blogId=kevel409&tab=1"
     
     /* 6개 번호 추첨 */
     static func startSlotNumber() -> [Int] {
